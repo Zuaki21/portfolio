@@ -394,7 +394,7 @@ export default function GalleryPage() {
                 <Box
                   ref={imageRef}
                   component="img"
-                  src={`/galleryimages/${selected}`}
+                  src={`${import.meta.env.BASE_URL}galleryimages/${selected}`}
                   alt={selected}
                   onMouseDown={handleImageMouseDown}
                   onClick={(e) => e.stopPropagation()}
