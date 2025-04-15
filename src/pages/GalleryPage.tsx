@@ -36,6 +36,9 @@ export default function GalleryPage() {
 
   const selected = selectedIndex !== null ? imageList[selectedIndex] : null;
 
+  const [loadedCount, setLoadedCount] = useState(1);
+  const [allLoaded, setAllLoaded] = useState(false);
+
   const handlePrev = () => {
     if (selectedIndex !== null) {
       setZoomScale(1);
@@ -166,6 +169,12 @@ export default function GalleryPage() {
     }, 200);
   };
 
+  useEffect(() => {
+    if (loadedCount === imageList.length) {
+      setAllLoaded(true);
+    }
+  }, [loadedCount]);
+
   return (
     <>
       <Header />
@@ -179,6 +188,15 @@ export default function GalleryPage() {
         }}
       >
         <Container maxWidth="xl">
+          {imageList.map((filename) => (
+            <img
+              key={filename}
+              src={`${import.meta.env.BASE_URL}galleryimages/${filename}`}
+              onLoad={() => setLoadedCount((prev) => prev + 1)}
+              style={{ display: "none" }}
+              alt=""
+            />
+          ))}
           <Box sx={{ textAlign: "center", mb: 2 }}>
             <svg viewBox="0 0 500 100" width="100%" height="100">
               <defs>
@@ -221,57 +239,85 @@ export default function GalleryPage() {
               }}
             />
           </Box>
-
-          <Masonry columns={{ xs: 2, sm: 3, md: 4, lg: 5, xl: 6 }} spacing={2}>
-            {imageList.map((filename, index) => (
+          {!allLoaded ? (
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                mt: 6,
+              }}
+            >
               <Box
-                key={filename}
-                onClick={() => {
-                  setSelectedIndex(index);
-                  setZoomScale(1);
-                  setOffset({ x: 0, y: 0 });
-                }}
-                onMouseMove={(e) => handleMouseHover(e, index)}
-                onMouseLeave={() => handleMouseLeave(index)}
                 sx={{
-                  cursor: "pointer",
-                  borderRadius: 2,
-                  overflow: "hidden",
-                  backgroundColor: "#ffffff80",
-                  position: "relative",
-                  transformStyle: "preserve-3d",
-                  animation: "fadeIn 0.8s ease forwards",
-                  animationDelay: `${index * 60}ms`,
-                  opacity: 0,
-                  ...hoverStyle[index],
-                  "&::before": {
-                    content: '""',
-                    position: "absolute",
-                    top: 0,
-                    left: "-75%",
-                    width: "50%",
-                    height: "100%",
-                    background:
-                      "linear-gradient(120deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.0) 100%)",
-                    transform: "skewX(-20deg)",
-                    transition: "left 0.5s ease-in-out, opacity 0.2s",
-                    zIndex: 2,
-                    pointerEvents: "none",
-                    opacity: 0,
-                  },
-                  "&:hover::before": { left: "125%", opacity: 1 },
+                  width: 64,
+                  height: 64,
+                  border: "6px solid",
+                  borderColor: "transparent",
+                  borderTopColor: "#daa520",
+                  borderRadius: "50%",
+                  animation: "spin 1s linear infinite",
+                  mb: 2,
                 }}
-              >
+              />
+              <Typography variant="body2" sx={{ fontWeight: "bold" }}>
+                読み込み中… {loadedCount} / {imageList.length}
+              </Typography>
+            </Box>
+          ) : (
+            <Masonry
+              columns={{ xs: 2, sm: 3, md: 4, lg: 5, xl: 6 }}
+              spacing={2}
+            >
+              {imageList.map((filename, index) => (
                 <Box
-                  component="img"
-                  loading="lazy"
-                  src={`${import.meta.env.BASE_URL}galleryimages/${filename}`}
-                  alt={filename}
-                  sx={{ width: "100%", height: "auto", display: "block" }}
-                />
-              </Box>
-            ))}
-          </Masonry>
+                  key={filename}
+                  onClick={() => {
+                    setSelectedIndex(index);
+                    setZoomScale(1);
+                    setOffset({ x: 0, y: 0 });
+                  }}
+                  onMouseMove={(e) => handleMouseHover(e, index)}
+                  onMouseLeave={() => handleMouseLeave(index)}
+                  sx={{
+                    cursor: "pointer",
+                    borderRadius: 2,
+                    overflow: "hidden",
+                    backgroundColor: "#ffffff80",
+                    position: "relative",
+                    transformStyle: "preserve-3d",
+                    animation: "fadeIn 0.8s ease forwards",
+                    animationDelay: `${index * 60}ms`,
+                    opacity: 0,
+                    ...hoverStyle[index],
+                    "&::before": {
+                      content: '""',
+                      position: "absolute",
+                      top: 0,
+                      left: "-75%",
+                      width: "50%",
+                      height: "100%",
+                      background:
+                        "linear-gradient(120deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.0) 100%)",
+                      transform: "skewX(-20deg)",
+                      transition: "left 0.5s ease-in-out, opacity 0.2s",
+                      zIndex: 2,
+                      pointerEvents: "none",
+                      opacity: 0,
+                    },
+                    "&:hover::before": { left: "125%", opacity: 1 },
+                  }}
+                >
+                  <Box
+                    component="img"
+                    src={`${import.meta.env.BASE_URL}galleryimages/${filename}`}
+                    alt={filename}
+                    sx={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                </Box>
+              ))}
+            </Masonry>
+          )}
           <Typography
             variant="caption"
             display="block"
@@ -397,6 +443,8 @@ export default function GalleryPage() {
                   component="img"
                   src={`${import.meta.env.BASE_URL}galleryimages/${selected}`}
                   alt={selected}
+                  onLoad={() => setLoadedCount((count) => count + 1)}
+                  onError={() => setLoadedCount((prev) => prev + 1)}
                   onMouseDown={handleImageMouseDown}
                   onClick={(e) => e.stopPropagation()}
                   sx={{
@@ -452,6 +500,10 @@ const controlButtonStyle = {
     "@keyframes fadeIn": {
       "0%": { opacity: 0, transform: "translateY(10px)" },
       "100%": { opacity: 1, transform: "translateY(0)" },
+    },
+    "@keyframes spin": {
+      "0%": { transform: "rotate(0deg)" },
+      "100%": { transform: "rotate(360deg)" },
     },
   }}
 />;
