@@ -448,7 +448,7 @@ export default function GalleryPage() {
                   src={`${import.meta.env.BASE_URL}galleryimages/${selected}`}
                   alt={selected}
                   onLoad={() => setLoadedCount((count) => count + 1)}
-                  onError={() => setLoadedCount((prev) => prev + 1)}
+                  onError={() => setLoadedCount((count) => count + 1)}
                   onMouseDown={handleImageMouseDown}
                   onClick={(e) => e.stopPropagation()}
                   sx={{
