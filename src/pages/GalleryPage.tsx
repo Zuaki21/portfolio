@@ -9,6 +9,8 @@ import {
   Fade,
 } from "@mui/material";
 
+import { Global } from "@emotion/react";
+import { Routes } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -303,7 +305,7 @@ export default function GalleryPage() {
                 left: 0,
                 width: "100vw",
                 height: "100vh",
-                backgroundColor: "rgba(0,0,0,0.6)",
+                backgroundColor: "rgba(0,0,0,0.7)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -443,9 +445,6 @@ const controlButtonStyle = {
     outline: "none",
   },
 };
-
-import { Global } from "@emotion/react";
-import { Routes } from "react-router-dom";
 
 <Global
   styles={{
