@@ -179,6 +179,18 @@ export default function GalleryPage() {
     <>
       <Header />
       <Routes>{/* your routes here */}</Routes>
+      <Global
+        styles={{
+          "@keyframes fadeIn": {
+            "0%": { opacity: 0, transform: "translateY(10px)" },
+            "100%": { opacity: 1, transform: "translateY(0)" },
+          },
+          "@keyframes spin": {
+            "0%": { transform: "rotate(0deg)" },
+            "100%": { transform: "rotate(360deg)" },
+          },
+        }}
+      />
       <Box
         sx={{
           minHeight: "100vh",
@@ -498,16 +510,3 @@ const controlButtonStyle = {
     outline: "none",
   },
 };
-
-<Global
-  styles={{
-    "@keyframes fadeIn": {
-      "0%": { opacity: 0, transform: "translateY(10px)" },
-      "100%": { opacity: 1, transform: "translateY(0)" },
-    },
-    "@keyframes spin": {
-      "0%": { transform: "rotate(0deg)" },
-      "100%": { transform: "rotate(360deg)" },
-    },
-  }}
-/>;
