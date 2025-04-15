@@ -27,7 +27,7 @@ const imageList = [
     '寅年.webp',
     '海と空.webp',
     'サイバーパンクちゃん.webp',
-    '秋.webp',
+    '芸術の秋.webp',
     '麦わら帽子.webp',
     'マフラー.webp',
     '和風スチームパンク.webp',

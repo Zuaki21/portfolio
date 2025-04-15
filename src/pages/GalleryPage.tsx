@@ -327,7 +327,7 @@ export default function GalleryPage() {
                   zIndex: 2100,
                 }}
               >
-                {selected}
+                {selected?.replace(/\.[^/.]+$/, "")}
               </Typography>
               <IconButton
                 onClick={(e) => {
