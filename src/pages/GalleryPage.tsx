@@ -264,7 +264,7 @@ export default function GalleryPage() {
               >
                 <Box
                   component="img"
-                  src={`/galleryimages/${filename}`}
+                  src={`${import.meta.env.BASE_URL}galleryimages/${filename}`}
                   alt={filename}
                   sx={{ width: "100%", height: "auto", display: "block" }}
                 />
