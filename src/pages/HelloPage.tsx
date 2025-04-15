@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // ← 追加
-import reactLogo from 'src/assets/react.svg';
-import viteLogo from 'src/assets/vite.svg';
-import 'src/App.css';
+import { useState } from "react";
+import Header from "../components/Header";
+import { useNavigate } from "react-router-dom"; // ← 追加
+import reactLogo from "src/assets/react.svg";
+import viteLogo from "src/assets/vite.svg";
+import "src/App.css";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -10,6 +11,7 @@ function App() {
 
   return (
     <>
+      <Header />
       <div>
         <a href="https://vite.dev" target="_blank" rel="noopener noreferrer">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -32,36 +34,35 @@ function App() {
 
         {/* ここに Gallery へ遷移するボタンを追加 */}
         <button
-          onClick={() => navigate('/gallery')}
+          onClick={() => navigate("/gallery")}
           className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
         >
           AboutMeへ移動
         </button>
         <button
-          onClick={() => navigate('/gallery')}
+          onClick={() => navigate("/gallery")}
           className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
         >
           Productへ移動
         </button>
         <button
-          onClick={() => navigate('/gallery')}
+          onClick={() => navigate("/gallery")}
           className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
         >
           Galleryへ移動
         </button>
         <button
-          onClick={() => navigate('/gallery')}
+          onClick={() => navigate("/gallery")}
           className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
         >
           Articlesへ移動
         </button>
         <button
-          onClick={() => navigate('/gallery')}
+          onClick={() => navigate("/gallery")}
           className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
         >
           Contactへ移動
         </button>
-        
       </div>
 
       <p className="read-the-docs">

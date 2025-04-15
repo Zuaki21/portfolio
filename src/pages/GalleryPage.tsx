@@ -178,7 +178,7 @@ export default function GalleryPage() {
           py: 4,
         }}
       >
-        <Container>
+        <Container maxWidth="xl">
           <Box sx={{ textAlign: "center", mb: 2 }}>
             <svg viewBox="0 0 500 100" width="100%" height="100">
               <defs>
@@ -222,7 +222,7 @@ export default function GalleryPage() {
             />
           </Box>
 
-          <Masonry columns={{ xs: 2, sm: 3, md: 4, lg: 5 }} spacing={2}>
+          <Masonry columns={{ xs: 2, sm: 3, md: 4, lg: 5, xl: 6 }} spacing={2}>
             {imageList.map((filename, index) => (
               <Box
                 key={filename}

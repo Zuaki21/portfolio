@@ -1,5 +1,18 @@
-// Header.tsx
-import { AppBar, Box, Toolbar, Typography, Button } from "@mui/material";
+import { useState } from "react";
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  Typography,
+  Button,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
 import { Link as RouterLink } from "react-router-dom";
 
 const navItems = [
@@ -12,53 +25,120 @@ const navItems = [
 ];
 
 export default function Header() {
-  return (
-    <AppBar
-      position="sticky"
-      elevation={0}
-      sx={{
-        backgroundColor: "rgba(255, 255, 255, 0.7)",
-        backdropFilter: "blur(10px)",
-        borderBottom: "1px solid rgba(200, 200, 200, 0.3)",
-        zIndex: 1000,
-      }}
-    >
-      <Toolbar sx={{ justifyContent: "space-between" }}>
-        <Typography
-          variant="h6"
-          sx={{
-            fontWeight: "bold",
-            color: "#333",
-            fontFamily: "Cinzel, serif",
-            letterSpacing: 1,
-          }}
-        >
-          Zuaki's Portfolio
-        </Typography>
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-        <Box sx={{ display: "flex", gap: 2 }}>
-          {navItems.map((item) => (
-            <Button
-              key={item.to}
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
+  const drawer = (
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+      <Typography
+        variant="h6"
+        sx={{
+          my: 2,
+          fontFamily: "Cinzel, serif",
+          fontWeight: "bold",
+        }}
+      >
+        Zuaki's Portfolio
+      </Typography>
+      <List>
+        {navItems.map((item) => (
+          <ListItem key={item.to} disablePadding>
+            <ListItemButton
               component={RouterLink}
               to={item.to}
-              sx={{
-                color: "#333",
-                fontWeight: "bold",
-                textTransform: "none",
-                fontFamily: "Cinzel, serif",
-                "&:hover": {
-                  color: "#b8860b",
-                  borderBottom: "2px solid #b8860b",
-                  backgroundColor: "transparent",
-                },
-              }}
+              sx={{ textAlign: "center" }}
             >
-              {item.label}
-            </Button>
-          ))}
-        </Box>
-      </Toolbar>
-    </AppBar>
+              <ListItemText primary={item.label} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
+
+  return (
+    <Box sx={{ display: "flex" }}>
+      <AppBar
+        component="nav"
+        position="sticky"
+        elevation={0}
+        sx={{
+          backgroundColor: "rgba(255, 255, 255, 0.7)",
+          backdropFilter: "blur(10px)",
+          borderBottom: "1px solid rgba(200, 200, 200, 0.3)",
+          zIndex: 1000,
+        }}
+      >
+        <Toolbar sx={{ justifyContent: "space-between" }}>
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: "bold",
+              color: "#333",
+              fontFamily: "Cinzel, serif",
+              letterSpacing: 1,
+              flexGrow: { xs: 1, md: 0 },
+            }}
+          >
+            Zuaki's Portfolio
+          </Typography>
+
+          {/* ハンバーガーアイコン：モバイル表示 */}
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="end"
+            onClick={handleDrawerToggle}
+            sx={{ display: { md: "none" }, color: "#333" }}
+          >
+            <MenuIcon />
+          </IconButton>
+
+          {/* PCメニュー */}
+          <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
+            {navItems.map((item) => (
+              <Button
+                key={item.to}
+                component={RouterLink}
+                to={item.to}
+                sx={{
+                  color: "#333",
+                  fontWeight: "bold",
+                  textTransform: "none",
+                  fontFamily: "Cinzel, serif",
+                  "&:hover": {
+                    color: "#b8860b",
+                    borderBottom: "2px solid #b8860b",
+                    backgroundColor: "transparent",
+                  },
+                }}
+              >
+                {item.label}
+              </Button>
+            ))}
+          </Box>
+        </Toolbar>
+      </AppBar>
+
+      {/* モバイルDrawer */}
+      <Drawer
+        anchor="right"
+        open={mobileOpen}
+        onClose={handleDrawerToggle}
+        ModalProps={{ keepMounted: true }}
+        sx={{
+          display: { xs: "block", md: "none" },
+          "& .MuiDrawer-paper": {
+            boxSizing: "border-box",
+            width: 240,
+          },
+        }}
+      >
+        {drawer}
+      </Drawer>
+    </Box>
   );
 }
