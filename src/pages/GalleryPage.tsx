@@ -36,7 +36,7 @@ export default function GalleryPage() {
 
   const selected = selectedIndex !== null ? imageList[selectedIndex] : null;
 
-  const [loadedCount, setLoadedCount] = useState(1);
+  const [loadedCount, setLoadedCount] = useState(0);
   const [allLoaded, setAllLoaded] = useState(false);
 
   const handlePrev = () => {
@@ -260,7 +260,11 @@ export default function GalleryPage() {
                   mb: 2,
                 }}
               />
-              <Typography variant="body2" sx={{ fontWeight: "bold" }}>
+              <Typography
+                variant="body2"
+                color="#777777"
+                sx={{ fontWeight: "bold" }}
+              >
                 読み込み中… {loadedCount} / {imageList.length}
               </Typography>
             </Box>
