@@ -35,8 +35,8 @@ export default function ParticleBackground() {
     backgroundCanvas.height = 2;
     const ctx = backgroundCanvas.getContext("2d")!;
     const gradient = ctx.createLinearGradient(0, 0, 2, 2);
-    gradient.addColorStop(0, "#ff99aa"); // 赤寄り
-    gradient.addColorStop(1, "#99bbff"); // 青寄り
+    gradient.addColorStop(0, "#ffdbf3"); // 赤寄り
+    gradient.addColorStop(1, "#a0a9bd"); // 青寄り
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, 2, 2);
     const texture = new THREE.CanvasTexture(backgroundCanvas);
