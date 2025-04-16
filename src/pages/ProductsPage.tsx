@@ -7,7 +7,7 @@ import {
   CardActions,
   Button,
   Grid,
-  Chip,
+  Tooltip,
 } from "@mui/material";
 import Header from "../components/Header";
 import { Routes } from "react-router-dom";
@@ -87,20 +87,52 @@ export default function ProductsPage() {
       <Routes>{/* your routes here */}</Routes>
       <Box sx={{ flexGrow: 1, position: "relative", overflow: "hidden" }}>
         <ParticleBackground />
-        <Typography
-          variant="h4"
-          gutterBottom
-          fontWeight="bold"
-          textAlign="center"
-          sx={{ fontFamily: `'Playfair Display', serif`, mt: 6 }}
-        >
-          Products
-        </Typography>
+        <Box sx={{ textAlign: "center", mb: 2 }}>
+          <svg viewBox="0 0 500 100" width="100%" height="100">
+            <defs>
+              <linearGradient
+                id="glitterGradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop offset="0%" stopColor="#8b7500" />
+                <stop offset="50%" stopColor="#d49d17" />
+                <stop offset="100%" stopColor="#8b7500" />
+              </linearGradient>
+            </defs>
+            <text
+              x="50%"
+              y="60%"
+              dominantBaseline="middle"
+              textAnchor="middle"
+              fill="url(#glitterGradient)"
+              fontFamily="'Cinzel', serif"
+              fontSize="48"
+              style={{ letterSpacing: 2, fontWeight: "bold" }}
+            >
+              Products
+            </text>
+          </svg>
+
+          <Box
+            sx={{
+              width: "300px",
+              height: "4px",
+              background:
+                "linear-gradient(to right,rgb(184, 141, 0),rgb(255, 216, 110) )",
+              mx: "auto",
+              borderRadius: "2px",
+              mt: -1.5,
+              mb: -2,
+            }}
+          />
+        </Box>
         <Container maxWidth="xl" sx={{ py: 4 }}>
           <Grid container spacing={4} justifyContent="center">
             {products.map((item, index) => (
               <Grid
-                item
                 key={index}
                 sx={{
                   display: "flex",
@@ -158,25 +190,25 @@ export default function ProductsPage() {
 
                           if (iconRef.startsWith("http")) {
                             return (
-                              <Box
-                                key={`icon-${i}`}
-                                component="img"
-                                src={iconRef}
-                                alt={lang}
-                                title={lang}
-                                sx={{ height: 32 }}
-                              />
+                              <Tooltip title={lang} key={`icon-${i}`}>
+                                <Box
+                                  component="img"
+                                  src={iconRef}
+                                  alt={lang}
+                                  sx={{ height: 32 }}
+                                />
+                              </Tooltip>
                             );
                           }
 
                           return (
-                            <Box
-                              key={`icon-${i}`}
-                              component="i"
-                              className={iconRef}
-                              title={lang}
-                              sx={{ fontSize: "2rem" }}
-                            />
+                            <Tooltip title={lang} key={`icon-${i}`}>
+                              <Box
+                                component="i"
+                                className={iconRef}
+                                sx={{ fontSize: "2rem" }}
+                              />
+                            </Tooltip>
                           );
                         })}
                       </Box>
@@ -195,17 +227,6 @@ export default function ProductsPage() {
                         </Box>
                       ))}
                     </Typography>
-
-                    <Box mt={1} mb={1}>
-                      {item.languages.map((lang, i) => (
-                        <Chip
-                          label={lang}
-                          key={i}
-                          size="small"
-                          sx={{ mr: 1, mb: 1 }}
-                        />
-                      ))}
-                    </Box>
                   </CardContent>
 
                   <Box

@@ -29,7 +29,7 @@ export const products: Product[] = [
     description:
       "魚眼感の強いWebカメラを補正し、\n仮想カメラ入力を可能にするソフト。補正強度の調整機能付き。",
     link: "https://github.com/Zuaki21/WebcamRealtimeDewarper",
-    image: "WebCam.gif",
+    image: "WebCam.png",
   },
   {
     title: "リング署名認証アプリケーション",
@@ -56,8 +56,8 @@ export const products: Product[] = [
     languages: ["C#", "Unity"],
     reason: "サークル (チーム制作)",
     description:
-      "リズムゲーム。UI、エディタ、データ暗号化、オンラインランキング（NCMB）を担当。",
-    image: "Default.webp",
+      "クロスする2つのレーンのリズムゲーム。UI、エディタ、\nデータ暗号化、オンラインランキング（NCMB）を担当。",
+    image: "chiasma.png",
   },
   {
     title: "不良品検知システム",
@@ -76,7 +76,7 @@ export const products: Product[] = [
     description:
       "Discordコメントを画面上に流す配信支援ツール。VOICEVOX連携・ChatGPT自演機能付き。",
     link: "https://github.com/Zuaki21/DiscordCommentFlow",
-    image: "Default.webp",
+    image: "comment.png",
   },
   {
     title: "ゲーム『スローウォーズ』",
@@ -84,7 +84,7 @@ export const products: Product[] = [
     languages: ["C#", "Unity"],
     reason: "サークル (個人制作)",
     description: "操作していない間は時間が遅くなる見下ろし型シューティング。",
-    image: "Default.webp",
+    image: "slowwars.png",
   },
   {
     title: "Chrome拡張『KakomonDojoEx』",
@@ -93,7 +93,7 @@ export const products: Product[] = [
     reason: "趣味 (個人制作)",
     description:
       "過去問道場の問題にキーボードで回答できるようにするChrome拡張。",
-    image: "Default.webp",
+    image: "add-on.png",
   },
   {
     title: "ゲーム『ハビタブルライフ』",
@@ -111,7 +111,7 @@ export const products: Product[] = [
     languages: ["C#", "Unity"],
     reason: "サークル (個人制作)",
     description: "忍者をタイミングよく切るリズムアクション。",
-    image: "Default.webp",
+    image: "samuraidance.png",
   },
   {
     title: "ゲーム『クリスマスデリバリー』",
@@ -120,7 +120,7 @@ export const products: Product[] = [
     reason: "サークル (チーム制作)",
     description: "サンタになって家にプレゼントを届けるタスク管理ゲーム。",
     link: "https://unityroom.com/games/christmasdelivery",
-    image: "Default.webp",
+    image: "Christmas.png",
   },
   {
     title: "ゲーム『千の間』",
@@ -129,7 +129,7 @@ export const products: Product[] = [
     reason: "サークル (チーム制作)",
     description:
       "殿様を導くアクションパズル。\nドット絵・キャラ操作・ステージ設計を担当。",
-    image: "Default.webp",
+    image: "sennoma.png",
   },
   {
     title: "ゲーム『幽霊と宝の塔』",

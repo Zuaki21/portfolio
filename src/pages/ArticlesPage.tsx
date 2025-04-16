@@ -5,7 +5,6 @@ import {
   Typography,
   Card,
   CardContent,
-  Link,
   CardActionArea,
 } from "@mui/material";
 import { useEffect } from "react";
@@ -71,7 +70,6 @@ export default function ArticlesPage() {
           <Grid container spacing={4} justifyContent="center">
             {articles.map((article, index) => (
               <Grid
-                item
                 key={index}
                 sx={{
                   maxWidth: 350,
