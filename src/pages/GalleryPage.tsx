@@ -261,9 +261,14 @@ export default function GalleryPage() {
                 }}
               />
               <Typography
-                variant="body2"
-                color="#777777"
-                sx={{ fontWeight: "bold" }}
+                variant="h6"
+                sx={{
+                  fontFamily: "'Cinzel', serif",
+                  fontWeight: 600,
+                  color: "#555555",
+                  letterSpacing: 1,
+                  textShadow: "0.5px 0.5px 1px rgba(0, 0, 0, 0.1)",
+                }}
               >
                 読み込み中… {loadedCount} / {imageList.length}
               </Typography>
@@ -350,23 +355,25 @@ export default function GalleryPage() {
               ))}
             </Masonry>
           )}
-          <Typography
-            variant="caption"
-            display="block"
-            textAlign="center"
-            mt={3}
-            color="text.secondary"
-            sx={{
-              backgroundColor: "rgba(255, 255, 255, 0.3)",
-              padding: "8px",
-              borderRadius: "8px",
-              fontFamily: "Cinzel, serif",
-              fontWeight: "bold",
-              fontSize: "0.rem",
-            }}
-          >
-            ※イラストの無断転載・利用・学習はご遠慮ください。
-          </Typography>
+          {allLoaded && (
+            <Typography
+              variant="caption"
+              display="block"
+              textAlign="center"
+              mt={3}
+              color="text.secondary"
+              sx={{
+                backgroundColor: "rgba(255, 255, 255, 0.3)",
+                padding: "8px",
+                borderRadius: "8px",
+                fontFamily: "Cinzel, serif",
+                fontWeight: "bold",
+                fontSize: "0.rem",
+              }}
+            >
+              ※イラストの無断転載・利用・学習はご遠慮ください。
+            </Typography>
+          )}
         </Container>
         <Modal
           open={selected !== null}
