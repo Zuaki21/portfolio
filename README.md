@@ -21,7 +21,12 @@ MaterialUI
 
 ### 2. About Me
 
-Zuaki
+ユーザー名：Zuaki
+
+Github https://github.com/Zuaki21
+Twitter https://x.com/Zuaki_
+
+(Unityroom) https://unityroom.com/games/chiasma
 
 広島大学 先進理工系化学研究科
 先進理工系化学専攻 情報科学プログラム
@@ -33,15 +38,32 @@ Zuaki
 
 サークル：ゲーム制作同好会 https://hu-gsd.com/
 
-趣味：ゲーム制作・お絵描き・VRChat(最近熱い)
-MetaQuest2 を買いました。創作界隈を盛り上げたいです。
+趣味：お絵描き・VRChat(最近熱い)・TRPG・ゲーム・アニメ
+創作が好きなので色々作ります。
+MetaQuest2を買いました。
 表現の幅を広げるために新しいことでも積極的に取り組みます。
 
-hobby：イラスト・VRChat・ゲーム・アニメ
+セキュリティに関する研究、キーワード　リング署名、秘匿共通集合、近距離通信
 
-経歴：研究テーマ
-インターン・コンテスト実績、スキルセットなど
+資格：ITパス、基本情報、応用情報
+
+実績
+NTTドコモハッカソン：最優秀賞
+学会発表：ICCT Pacific 2025
+
+インターン
+マツダ・DMM.com、ドコモ、NRI、AWS、ゲームフリーク、NTT東日本、NTT西日本、中部電力
+
+
+スキルセットなど
 使用技術のロゴ一覧なども添えてそれっぽく
+慣れている：C#<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+,C
+            <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+          ,
+          Python,Github,Git
+何か作るのに使った：C++,HTML,CSS,Java,React,
+講習会などで使用：GO,JS,Docker, MySQL, MariaDB, Dart,Vite,Flutter,AndroidStudio,Kotlin
 
 ### 3. Product
 
