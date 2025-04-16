@@ -9,6 +9,8 @@ import {
   Fade,
 } from "@mui/material";
 
+import ParticleBackground from "../components/ParticleBackground";
+
 import { Routes } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
@@ -179,14 +181,10 @@ export default function GalleryPage() {
       <Header />
       <Routes>{/* your routes here */}</Routes>
 
-      <Box
-        sx={{
-          minHeight: "100vh",
-          background:
-            "linear-gradient(135deg,rgb(255, 243, 250),rgb(177, 186, 206))",
-          py: 4,
-        }}
+      <div
+        style={{ position: "relative", minHeight: "100vh", overflow: "hidden" }}
       >
+        <ParticleBackground />
         <Container maxWidth="xl">
           {imageList.map((filename) => (
             <img
@@ -214,7 +212,7 @@ export default function GalleryPage() {
               </defs>
               <text
                 x="50%"
-                y="40%"
+                y="60%"
                 dominantBaseline="middle"
                 textAnchor="middle"
                 fill="url(#glitterGradient)"
@@ -234,8 +232,8 @@ export default function GalleryPage() {
                   "linear-gradient(to right,rgb(184, 141, 0),rgb(255, 216, 110) )",
                 mx: "auto",
                 borderRadius: "2px",
-                mt: -4,
-                mb: 5,
+                mt: -1.5,
+                mb: 4,
               }}
             />
           </Box>
@@ -292,7 +290,11 @@ export default function GalleryPage() {
                     cursor: "pointer",
                     borderRadius: 2,
                     overflow: "hidden",
-                    backgroundColor: "#ffffff80",
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                    backdropFilter: "blur(4px)",
+                    WebkitBackdropFilter: "blur(4px)",
+                    border: "1px solid rgba(255, 255, 255, 0.2)",
+                    boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
                     position: "relative",
                     transformStyle: "preserve-3d",
                     animation: "fadeIn 0.8s ease forwards",
@@ -361,14 +363,20 @@ export default function GalleryPage() {
               display="block"
               textAlign="center"
               mt={3}
+              mb={3}
               color="text.secondary"
               sx={{
-                backgroundColor: "rgba(255, 255, 255, 0.3)",
-                padding: "8px",
-                borderRadius: "8px",
+                backgroundColor: "rgba(255, 255, 255, 0.1)",
+                backdropFilter: "blur(8px)",
+                WebkitBackdropFilter: "blur(8px)",
+                border: "1px solid rgba(255, 255, 255, 0.2)",
+                boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+                padding: "8px 16px",
+                borderRadius: "12px",
                 fontFamily: "Cinzel, serif",
                 fontWeight: "bold",
-                fontSize: "0.rem",
+                fontSize: "0.85rem",
+                mx: "auto",
               }}
             >
               ※イラストの無断転載・利用・学習はご遠慮ください。
@@ -503,7 +511,7 @@ export default function GalleryPage() {
             </Box>
           </Fade>
         </Modal>
-      </Box>
+      </div>
     </>
   );
 }

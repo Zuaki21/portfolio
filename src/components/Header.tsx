@@ -32,13 +32,17 @@ export default function Header() {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{ textAlign: "center", backgroundColor: "#fff", height: "100%" }}
+    >
       <Typography
         variant="h6"
         sx={{
           my: 2,
           fontFamily: "Cinzel, serif",
           fontWeight: "bold",
+          color: "#333",
         }}
       >
         Zuaki's Portfolio
@@ -49,9 +53,21 @@ export default function Header() {
             <ListItemButton
               component={RouterLink}
               to={item.to}
-              sx={{ textAlign: "center" }}
+              sx={{
+                textAlign: "center",
+                color: "#333",
+                "&:hover": {
+                  backgroundColor: "#f5f5f5",
+                },
+              }}
             >
-              <ListItemText primary={item.label} />
+              <ListItemText
+                primary={item.label}
+                primaryTypographyProps={{
+                  fontFamily: "Cinzel, serif",
+                  fontWeight: "bold",
+                }}
+              />
             </ListItemButton>
           </ListItem>
         ))}
@@ -66,9 +82,9 @@ export default function Header() {
         position="sticky"
         elevation={0}
         sx={{
-          backgroundColor: "rgba(255, 255, 255, 0.7)",
+          backgroundColor: "rgba(255, 255, 255, 0.8)",
           backdropFilter: "blur(10px)",
-          borderBottom: "1px solid rgba(200, 200, 200, 0.3)",
+          borderBottom: "1px solid rgba(200, 200, 200, 0.4)",
           zIndex: 1000,
         }}
       >
@@ -86,9 +102,7 @@ export default function Header() {
             Zuaki's Portfolio
           </Typography>
 
-          {/* ハンバーガーアイコン：モバイル表示 */}
           <IconButton
-            color="inherit"
             aria-label="open drawer"
             edge="end"
             onClick={handleDrawerToggle}
@@ -97,7 +111,6 @@ export default function Header() {
             <MenuIcon />
           </IconButton>
 
-          {/* PCメニュー */}
           <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
             {navItems.map((item) => (
               <Button
@@ -123,7 +136,6 @@ export default function Header() {
         </Toolbar>
       </AppBar>
 
-      {/* モバイルDrawer */}
       <Drawer
         anchor="right"
         open={mobileOpen}
@@ -132,6 +144,8 @@ export default function Header() {
         sx={{
           display: { xs: "block", md: "none" },
           "& .MuiDrawer-paper": {
+            backgroundColor: "#fff",
+            color: "#333",
             boxSizing: "border-box",
             width: 240,
           },
