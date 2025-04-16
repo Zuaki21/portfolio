@@ -80,11 +80,11 @@ export default function AboutMePage() {
               >
                 <Box
                   component="img"
-                  src="/image/x_logo.svg"
+                  src={`${import.meta.env.BASE_URL}image/x_logo.svg`}
                   alt="X"
                   sx={{
-                    height: 32,
-                    width: 32,
+                    height: 28,
+                    width: 28,
                     filter:
                       "invert(33%) sepia(0%) saturate(0%) hue-rotate(178deg) brightness(90%) contrast(85%)",
                   }}
