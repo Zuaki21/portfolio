@@ -51,7 +51,7 @@ export default function AboutMePage() {
           <Box sx={{ display: "flex", justifyContent: "center", mb: 1 }}>
             <Avatar
               alt="Zuaki"
-              src="/image/icon.png"
+              src={`${import.meta.env.BASE_URL}image/icon.webp`}
               sx={{ width: 120, height: 120 }}
             />
           </Box>

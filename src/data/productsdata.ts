@@ -19,7 +19,7 @@ export const products: Product[] = [
     description:
       "エモクロアキャラシ画像をダウンロードするためのChrome拡張機能。",
     link: "https://chromewebstore.google.com/detail/%E3%82%A8%E3%83%A2%E3%82%AF%E3%83%AD%E3%82%A2%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%B7%E7%94%BB%E5%83%8F%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%80%E3%83%BC/bfppmgmpcbmhmhmabjngnncnaemljkph?authuser=0&hl=ja",
-    image: "CharacterSheet.png",
+    image: "CharacterSheet.webp",
   },
   {
     title: "魚眼カメラ補正ソフト『WebcamRealtimeDewarper』",
@@ -29,7 +29,7 @@ export const products: Product[] = [
     description:
       "魚眼感の強いWebカメラを補正し、\n仮想カメラ入力を可能にするソフト。補正強度の調整機能付き。",
     link: "https://github.com/Zuaki21/WebcamRealtimeDewarper",
-    image: "WebCam.png",
+    image: "WebCam.webp",
   },
   {
     title: "リング署名認証アプリケーション",
@@ -38,7 +38,7 @@ export const products: Product[] = [
     reason: "研究 (個人制作)",
     description:
       "匿名性を保った事前登録者の認証アプリ。\n端末間通信と独自ライブラリECDL_DLLを使用。",
-    image: "laboapp.png",
+    image: "laboapp.webp",
   },
   {
     title: "暗号ライブラリ『ECDL_DLL』",
@@ -48,7 +48,7 @@ export const products: Product[] = [
     description:
       "リング署名のための高速楕円曲線暗号ライブラリ。楕円点操作を実装。",
     link: "https://github.com/Zuaki21/ECDL_DLL",
-    image: "library.png",
+    image: "library.webp",
   },
   {
     title: "ゲーム『CHIASMA』",
@@ -57,7 +57,7 @@ export const products: Product[] = [
     reason: "サークル (チーム制作)",
     description:
       "クロスする2つのレーンのリズムゲーム。UI、エディタ、\nデータ暗号化、オンラインランキング（NCMB）を担当。",
-    image: "chiasma.png",
+    image: "chiasma.webp",
   },
   {
     title: "不良品検知システム",
@@ -76,7 +76,7 @@ export const products: Product[] = [
     description:
       "Discordコメントを画面上に流す配信支援ツール。VOICEVOX連携・ChatGPT自演機能付き。",
     link: "https://github.com/Zuaki21/DiscordCommentFlow",
-    image: "comment.png",
+    image: "comment.webp",
   },
   {
     title: "ゲーム『スローウォーズ』",
@@ -84,7 +84,7 @@ export const products: Product[] = [
     languages: ["C#", "Unity"],
     reason: "サークル (個人制作)",
     description: "操作していない間は時間が遅くなる見下ろし型シューティング。",
-    image: "slowwars.png",
+    image: "slowwars.webp",
   },
   {
     title: "Chrome拡張『KakomonDojoEx』",
@@ -93,7 +93,7 @@ export const products: Product[] = [
     reason: "趣味 (個人制作)",
     description:
       "過去問道場の問題にキーボードで回答できるようにするChrome拡張。",
-    image: "add-on.png",
+    image: "add-on.webp",
   },
   {
     title: "ゲーム『ハビタブルライフ』",
@@ -103,7 +103,7 @@ export const products: Product[] = [
     description:
       "Unityroomゲームジャム参加作品。育成・図鑑・ショップUIを担当。",
     link: "https://unityroom.com/games/habitable-life750",
-    image: "habitable2.png",
+    image: "habitable2.webp",
   },
   {
     title: "ゲーム『ダンシング☆サムライ』",
@@ -111,7 +111,7 @@ export const products: Product[] = [
     languages: ["C#", "Unity"],
     reason: "サークル (個人制作)",
     description: "忍者をタイミングよく切るリズムアクション。",
-    image: "samuraidance.png",
+    image: "samuraidance.webp",
   },
   {
     title: "ゲーム『クリスマスデリバリー』",
@@ -120,7 +120,7 @@ export const products: Product[] = [
     reason: "サークル (チーム制作)",
     description: "サンタになって家にプレゼントを届けるタスク管理ゲーム。",
     link: "https://unityroom.com/games/christmasdelivery",
-    image: "Christmas.png",
+    image: "Christmas.webp",
   },
   {
     title: "ゲーム『千の間』",
@@ -129,7 +129,7 @@ export const products: Product[] = [
     reason: "サークル (チーム制作)",
     description:
       "殿様を導くアクションパズル。\nドット絵・キャラ操作・ステージ設計を担当。",
-    image: "sennoma.png",
+    image: "sennoma.webp",
   },
   {
     title: "ゲーム『幽霊と宝の塔』",
@@ -138,6 +138,6 @@ export const products: Product[] = [
     reason: "サークル (チーム制作)",
     description: "重力反転アクションゲーム。ドット絵素材を含む全体制作を担当。",
     link: "https://unityroom.com/games/yurei_to_takara_no_tou",
-    image: "Yurei.png",
+    image: "Yurei.webp",
   },
 ];

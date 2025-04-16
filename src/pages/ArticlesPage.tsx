@@ -15,22 +15,22 @@ const articles = [
   {
     title: "Unityの基礎【Unityの教科書#1】",
     url: "https://hu-gsd.com/lecture/unity-text-1/",
-    image: "UnityText.png",
+    image: "UnityText.webp",
   },
   {
     title: "Discordで配信したい人向けのOBS Studioの始め方",
     url: "https://hu-gsd.com/lecture/obs-for-discord/",
-    image: "OBS.png",
+    image: "OBS.webp",
   },
   {
     title: "Live2Dモデルの作り方(我流)",
     url: "https://hu-gsd.com/lecture/how_to_make_live2d_models/",
-    image: "Live2D.png",
+    image: "Live2D.webp",
   },
   {
     title: "【Unity】サッとスプレットシートを読み込みたい",
     url: "https://hu-gsd.com/lecture/load_spreadsheets/",
-    image: "spread.png",
+    image: "spread.webp",
   },
   {
     title:
@@ -41,7 +41,7 @@ const articles = [
   {
     title: "死にゲーをつくってみたよ【GSD体験記】",
     url: "https://hu-gsd.com/diary/yurei_to_takara_no_tou_gsd/",
-    image: "yurei.png",
+    image: "yurei.webp",
   },
 ];
 
