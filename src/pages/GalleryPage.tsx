@@ -9,7 +9,6 @@ import {
   Fade,
 } from "@mui/material";
 
-import { Global } from "@emotion/react";
 import { Routes } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
