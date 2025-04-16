@@ -215,7 +215,7 @@ export default function GalleryPage() {
               </defs>
               <text
                 x="50%"
-                y="65%"
+                y="40%"
                 dominantBaseline="middle"
                 textAnchor="middle"
                 fill="url(#glitterGradient)"
@@ -235,8 +235,8 @@ export default function GalleryPage() {
                   "linear-gradient(to right,rgb(184, 141, 0),rgb(255, 216, 110) )",
                 mx: "auto",
                 borderRadius: "2px",
-                mt: -1,
-                mb: 7,
+                mt: -4,
+                mb: 5,
               }}
             />
           </Box>
@@ -314,11 +314,39 @@ export default function GalleryPage() {
                   }}
                 >
                   <Box
-                    component="img"
-                    src={`${import.meta.env.BASE_URL}galleryimages/${filename}`}
-                    alt={filename}
-                    sx={{ width: "100%", height: "auto", display: "block" }}
-                  />
+                    sx={{
+                      position: "relative",
+                      width: "100%",
+                      height: "auto",
+                      borderRadius: 2,
+                      overflow: "hidden",
+                    }}
+                  >
+                    <Box
+                      component="img"
+                      src={`${
+                        import.meta.env.BASE_URL
+                      }galleryimages/${filename}`}
+                      alt={filename}
+                      sx={{
+                        width: "100%",
+                        height: "auto",
+                        display: "block",
+                        userSelect: "none",
+                        pointerEvents: "none",
+                      }}
+                    />
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        zIndex: 10,
+                      }}
+                    />
+                  </Box>
                 </Box>
               ))}
             </Masonry>
@@ -452,6 +480,7 @@ export default function GalleryPage() {
                   onError={() => setLoadedCount((count) => count + 1)}
                   onMouseDown={handleImageMouseDown}
                   onClick={(e) => e.stopPropagation()}
+                  onContextMenu={(e) => e.preventDefault()}
                   sx={{
                     transform: `translate(${offset.x}px, ${offset.y}px) scale(${zoomScale})`,
                     transition: "transform 0.1s ease-out",
