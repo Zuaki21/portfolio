@@ -270,23 +270,11 @@ export default function GalleryPage() {
                       boxShadow: "0 0px 8px rgba(0, 0, 0, 0.2)",
                       position: "relative",
                       transformStyle: "preserve-3d",
-                      // アニメーションをスマホとPCで統一
                       animation: "fadeIn 0.8s ease forwards",
                       animationFillMode: "forwards",
                       animationDelay: `${index * 60}ms`,
-                      opacity: 0,
+                      opacity: 1,
                       ...hoverStyle[index],
-                      // モバイルでのアニメーションを有効にする
-                      "@media (max-width:600px)": {
-                        animation: "fadeIn 0.8s ease forwards",
-                        animationDelay: `${index * 60}ms`,
-                        opacity: 1, // モバイルでは即表示
-                      },
-                      // PCでもアニメーションが効くように調整
-                      "@media (min-width:601px)": {
-                        animation: "fadeIn 0.8s ease forwards",
-                        opacity: 1,
-                      },
                       "&::before": {
                         content: '""',
                         position: "absolute",
