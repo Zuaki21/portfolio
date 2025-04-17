@@ -176,8 +176,6 @@ export default function GalleryPage() {
     }
   }, [loadedCount]);
 
-  const isMobile = typeof window !== "undefined" && window.innerWidth <= 600;
-
   return (
     <>
       <Header />
