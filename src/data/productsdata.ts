@@ -16,9 +16,9 @@ export const products: Product[] = [
     date: "2025年4月 (1週間)",
     languages: ["React", "TypeScript", "MaterialUI", "Vite"],
     reason: "趣味 (個人制作)",
-    description: "このページです",
+    description: "このサイトです。",
     link: "https://github.com/Zuaki21/portfolio?tab=readme-ov-file",
-    image: "Portfolio.webp",
+    image: "Portfolio2.webp",
   },
   {
     title: "拡張機能「エモクロアキャラシ画像ダウンローダー」",
@@ -36,7 +36,7 @@ export const products: Product[] = [
     languages: ["React", "TypeScript", "MaterialUI", "Vite"],
     reason: "趣味 (個人制作)",
     description:
-      "推しを推し合うファンコミュニティSNS\nドコモハッカソン(2024/9/10-2024/9/13) 最優秀賞受賞作品\n主にフロントエンドのUIデザインを担当。",
+      "推しを推し合うファンコミュニティSNS。\nドコモハッカソン(2024/9/10-2024/9/13) 最優秀賞受賞作品。\n主にフロントエンドのUIデザインを担当。",
     link: "https://github.com/docomo-KOSAMAX/FAVE",
     image: "FAVE.webp",
   },
