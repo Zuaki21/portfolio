@@ -16,7 +16,7 @@ export const products: Product[] = [
     date: "2025年4月 (1週間)",
     languages: ["React", "TypeScript", "MaterialUI", "Vite"],
     reason: "趣味 (個人制作)",
-    description: "このサイトです。",
+    description: "このサイトです。インタラクティブデザイン対応。",
     link: "https://github.com/Zuaki21/portfolio?tab=readme-ov-file",
     image: "Portfolio2.webp",
   },
@@ -93,7 +93,7 @@ export const products: Product[] = [
     languages: ["C#", "Unity", "Selenium"],
     reason: "趣味 (個人制作)",
     description:
-      "Discordコメントを画面上に流す配信支援ツール。VOICEVOX連携・ChatGPT自演機能付き。",
+      "Discordコメントを画面上に流す配信支援ツール。フォントを変えられる他、VOICEVOXの読み上げ・ChatGPTでのコメント自演機能付き。",
     link: "https://github.com/Zuaki21/DiscordCommentFlow",
     image: "comment.webp",
   },
@@ -102,7 +102,8 @@ export const products: Product[] = [
     date: "2022年6月 (1ヵ月間)",
     languages: ["C#", "Unity"],
     reason: "サークル (個人制作)",
-    description: "操作していない間は時間が遅くなる見下ろし型シューティング。",
+    description:
+      "操作していない間は時間が遅くなる見下ろし型シューティング。 \n インタラクティブミュージック対応。全6ステージ。",
     image: "slowwars.webp",
   },
   {

@@ -226,9 +226,9 @@ export default function ProductsPage() {
                       pb: 2,
                       display: "flex",
                       flexDirection: "column",
-                      alignItems: "center", // これで中央揃えにする
-                      justifyContent: "center", // 縦方向の中央揃え
-                      textAlign: "center", // テキストの中央揃え
+                      alignItems: "center", // ← 中央揃えのままでOK
+                      justifyContent: "flex-start", // ← ここを変更して上寄せ
+                      textAlign: "center",
                     }}
                   >
                     <Typography variant="h6" fontWeight="bold" gutterBottom>

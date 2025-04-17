@@ -3,7 +3,6 @@ import {
   AppBar,
   Box,
   Toolbar,
-  Typography,
   Button,
   IconButton,
   Drawer,
@@ -36,17 +35,28 @@ export default function Header() {
       onClick={handleDrawerToggle}
       sx={{ textAlign: "center", backgroundColor: "#fff", height: "100%" }}
     >
-      <Typography
-        variant="h6"
+      <Button
+        component={RouterLink}
+        to="/"
+        disableRipple
         sx={{
           my: 2,
           fontFamily: "Cinzel, serif",
           fontWeight: "bold",
           color: "#333",
+          backgroundColor: "transparent",
+          boxShadow: "none",
+          textTransform: "none",
+          fontSize: "1.25rem", // Typography h6相当
+          "&:hover": {
+            backgroundColor: "transparent",
+            color: "#b8860b",
+          },
         }}
       >
         Zuaki's Portfolio
-      </Typography>
+      </Button>
+
       <List>
         {navItems.map((item) => (
           <ListItem key={item.to} disablePadding>
@@ -89,18 +99,35 @@ export default function Header() {
         }}
       >
         <Toolbar sx={{ justifyContent: "space-between" }}>
-          <Typography
-            variant="h6"
+          <Button
+            component={RouterLink}
+            to="/"
+            disableRipple
             sx={{
+              // ↓ これを削除して上下マージンなしに
+              my: 0,
+
+              // ↓ 追加で中央揃え
+              display: "flex",
+              alignItems: "left",
+              height: "100%",
+
+              // その他のスタイル
+              fontFamily: "Cinzel, serif",
               fontWeight: "bold",
               color: "#333",
-              fontFamily: "Cinzel, serif",
-              letterSpacing: 1,
-              flexGrow: { xs: 1, md: 0 },
+              backgroundColor: "transparent",
+              boxShadow: "none",
+              textTransform: "none",
+              fontSize: "1.3rem",
+              "&:hover": {
+                backgroundColor: "transparent",
+                color: "#b8860b",
+              },
             }}
           >
             Zuaki's Portfolio
-          </Typography>
+          </Button>
 
           <IconButton
             aria-label="open drawer"
