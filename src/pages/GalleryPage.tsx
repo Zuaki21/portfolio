@@ -189,7 +189,11 @@ export default function GalleryPage() {
           <img
             key={filename}
             src={`${import.meta.env.BASE_URL}galleryimages/${filename}`}
-            onLoad={() => setLoadedCount((prev) => prev + 1)}
+            onLoad={() => setLoadedCount((prev) => prev + 1)} // 画像読み込み成功時にカウント更新
+            onError={() => {
+              setLoadedCount((prev) => prev + 1); // 読み込み失敗時もカウント更新
+              console.error(`Failed to load image: ${filename}`);
+            }}
             style={{ display: "none" }}
             alt=""
           />
