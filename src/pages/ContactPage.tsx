@@ -93,7 +93,7 @@ export default function ContactPage() {
             textAlign: "center",
             fontFamily: `'Playfair Display', serif`,
             position: "absolute", // 上に配置するための絶対配置
-            top: "5%", // 上から少し余裕を持たせる
+            top: "5.3%", // 上から少し余裕を持たせる
             zIndex: 1, // パーティクル背景の上に配置
             width: "100%",
           }}
