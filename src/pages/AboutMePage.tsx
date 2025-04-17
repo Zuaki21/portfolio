@@ -29,7 +29,11 @@ export default function AboutMePage() {
           gutterBottom
           fontWeight="bold"
           textAlign="center"
-          sx={{ fontFamily: `'Playfair Display', serif`, mt: 6 }}
+          sx={{
+            fontFamily: `'Playfair Display', serif`,
+            mt: 6,
+            color: "text.primary", // 色をテーマに基づいて設定
+          }}
         >
           About Me
         </Typography>
@@ -42,7 +46,7 @@ export default function AboutMePage() {
             backdropFilter: "blur(6px)",
             borderRadius: 4,
             border: "1px solid rgba(255,255,255,0.3)",
-            boxShadow: "0 8px 32px rgba(0,0,0,0.25)",
+            boxShadow: "0 0px 8px rgba(0, 0, 0, 0.2)",
             zIndex: 1,
             position: "relative",
             fontFamily: `'Poppins', 'Noto Sans JP', sans-serif`,
@@ -56,7 +60,12 @@ export default function AboutMePage() {
             />
           </Box>
 
-          <Typography variant="h6" gutterBottom align="center">
+          <Typography
+            variant="h6"
+            gutterBottom
+            align="center"
+            sx={{ color: "text.primary" }} // 色をテーマに基づいて設定
+          >
             Zuaki
           </Typography>
 
@@ -93,28 +102,37 @@ export default function AboutMePage() {
             </Tooltip>
           </Box>
 
-          <Typography gutterBottom align="center">
-            広島大学 先進理工系化学研究科 / 情報科学プログラム
-            <br />
-            計算機基礎学研究室（
+          <Typography
+            gutterBottom
+            align="center"
+            sx={{ color: "text.primary" }}
+          >
+            広島大学 先進理工系化学研究科 / 情報科学プログラム /{" "}
             <Link
               href="https://www.iec.hiroshima-u.ac.jp/"
               target="_blank"
               rel="noopener"
             >
-              研究室HP
+              計算機基礎学研究室
             </Link>
-            ）
           </Typography>
 
-          <Typography gutterBottom align="center">
-            所属：
+          <Typography
+            gutterBottom
+            align="center"
+            sx={{ color: "text.primary" }}
+          >
+            所属：{" "}
             <Link href="https://hu-gsd.com/" target="_blank" rel="noopener">
-              GSD（ゲーム制作同好会）
+              広島大学ゲーム制作同好会
             </Link>
           </Typography>
 
-          <Typography gutterBottom align="center">
+          <Typography
+            gutterBottom
+            align="center"
+            sx={{ color: "text.primary" }}
+          >
             出身：愛知県 ／ 現在：広島県
           </Typography>
 
@@ -122,10 +140,17 @@ export default function AboutMePage() {
 
           <Divider sx={{ my: 4 }} />
 
-          <Typography variant="h6" gutterBottom>
+          <Typography
+            variant="h6"
+            gutterBottom
+            sx={{ color: "text.primary", textAlign: "center" }}
+          >
             趣味・活動
           </Typography>
-          <Typography gutterBottom>
+          <Typography
+            gutterBottom
+            sx={{ color: "text.primary", textAlign: "center" }}
+          >
             趣味：お絵描き・VRChat（最近熱い）・TRPG・ゲーム・アニメ
             <br />
             創作が好きで、さまざまな作品を制作しています。
@@ -137,10 +162,17 @@ export default function AboutMePage() {
 
           <Divider sx={{ my: 4 }} />
 
-          <Typography variant="h6" gutterBottom>
+          <Typography
+            variant="h6"
+            gutterBottom
+            sx={{ color: "text.primary", textAlign: "center" }}
+          >
             リサーチ & 実績
           </Typography>
-          <Typography gutterBottom>
+          <Typography
+            gutterBottom
+            sx={{ color: "text.primary", textAlign: "center" }}
+          >
             セキュリティ分野における研究（リング署名・秘匿共通集合・近距離通信）
             <br />
             資格：ITパスポート／基本情報技術者／応用情報技術者
@@ -150,24 +182,35 @@ export default function AboutMePage() {
 
           <Divider sx={{ my: 4 }} />
 
-          <Typography variant="h6" gutterBottom>
+          <Typography
+            variant="h6"
+            gutterBottom
+            sx={{ color: "text.primary", textAlign: "center" }}
+          >
             インターン経験
           </Typography>
-          <Typography gutterBottom>
-            マツダ株式会社、合同会社DMM.com、株式会社NTTドコモ、株式会社野村総合研究所（NRI）、
-            アマゾン ウェブ サービス
-            ジャパン合同会社（AWS）、株式会社ゲームフリーク、
+          <Typography
+            gutterBottom
+            sx={{ color: "text.primary", textAlign: "center" }}
+          >
+            マツダ株式会社、合同会社DMM.com、株式会社NTTドコモ、
+            株式会社野村総合研究所（NRI）、アマゾン ウェブ
+            サービスジャパン合同会社（AWS）、株式会社ゲームフリーク、
             東日本電信電話株式会社（NTT東日本）、西日本電信電話株式会社（NTT西日本）、中部電力株式会社
           </Typography>
 
           <Divider sx={{ my: 4 }} />
 
-          <Typography variant="h6" gutterBottom>
-            スキルセット（Devicon）
+          <Typography
+            variant="h6"
+            gutterBottom
+            sx={{ color: "text.primary", textAlign: "center" }}
+          >
+            スキルセット
           </Typography>
 
           <Box textAlign="center" sx={{ mt: 2 }}>
-            <Typography fontWeight="bold" mb={1}>
+            <Typography fontWeight="bold" mb={1} sx={{ color: "text.primary" }}>
               制作で頻繁に使用
             </Typography>
             <Stack
@@ -221,7 +264,12 @@ export default function AboutMePage() {
               </Tooltip>
             </Stack>
 
-            <Typography fontWeight="bold" mt={4} mb={1}>
+            <Typography
+              fontWeight="bold"
+              mt={4}
+              mb={1}
+              sx={{ color: "text.primary" }}
+            >
               使って制作経験あり
             </Typography>
             <Stack
@@ -296,7 +344,12 @@ export default function AboutMePage() {
               </Tooltip>
             </Stack>
 
-            <Typography fontWeight="bold" mt={4} mb={1}>
+            <Typography
+              fontWeight="bold"
+              mt={4}
+              mb={1}
+              sx={{ color: "text.primary" }}
+            >
               講義・講習会で触れたことがある
             </Typography>
             <Stack
@@ -411,7 +464,7 @@ function LiveAge({ birthDate }: { birthDate: Date }) {
   }, [birthDate]);
 
   return (
-    <Typography variant="body1" align="center">
+    <Typography variant="body1" align="center" sx={{ color: "text.primary" }}>
       年齢：{age}歳
     </Typography>
   );

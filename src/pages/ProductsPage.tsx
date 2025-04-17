@@ -95,46 +95,19 @@ export default function ProductsPage() {
       <Box sx={{ flexGrow: 1, position: "relative", overflow: "hidden" }}>
         <ParticleBackground />
         <Box sx={{ textAlign: "center", mb: 2 }}>
-          <svg viewBox="0 0 500 100" width="100%" height="100">
-            <defs>
-              <linearGradient
-                id="glitterGradient"
-                x1="0%"
-                y1="0%"
-                x2="100%"
-                y2="100%"
-              >
-                <stop offset="0%" stopColor="#8b7500" />
-                <stop offset="50%" stopColor="#d49d17" />
-                <stop offset="100%" stopColor="#8b7500" />
-              </linearGradient>
-            </defs>
-            <text
-              x="50%"
-              y="60%"
-              dominantBaseline="middle"
-              textAnchor="middle"
-              fill="url(#glitterGradient)"
-              fontFamily="'Cinzel', serif"
-              fontSize="48"
-              style={{ letterSpacing: 2, fontWeight: "bold" }}
-            >
-              Products
-            </text>
-          </svg>
-
-          <Box
+          <Typography
+            variant="h4"
+            fontWeight="bold"
+            gutterBottom
+            textAlign="center"
             sx={{
-              width: "300px",
-              height: "4px",
-              background:
-                "linear-gradient(to right,rgb(184, 141, 0),rgb(255, 216, 110) )",
-              mx: "auto",
-              borderRadius: "2px",
-              mt: -1.5,
-              mb: -2,
+              fontFamily: `'Playfair Display', serif`,
+              mt: 6,
+              color: "text.primary",
             }}
-          />
+          >
+            Products
+          </Typography>
         </Box>
         <Container maxWidth="xl" sx={{ py: 4 }}>
           <Grid container spacing={4} justifyContent="center">
@@ -153,7 +126,7 @@ export default function ProductsPage() {
                     backgroundColor: "rgba(255,255,255,0.2)",
                     backdropFilter: "blur(6px)",
                     borderRadius: 4,
-                    boxShadow: "0 4px 16px rgba(0,0,0,0.2)",
+                    boxShadow: "0 0px 8px rgba(0, 0, 0, 0.2)",
                     display: "flex",
                     flexDirection: "column",
                     height: "100%",

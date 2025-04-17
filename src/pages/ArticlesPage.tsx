@@ -56,17 +56,20 @@ export default function ArticlesPage() {
 
       <Box sx={{ position: "relative", zIndex: 1 }}>
         <Header />
-        <Container sx={{ py: 6 }} maxWidth="lg">
-          <Typography
-            variant="h4"
-            fontWeight="bold"
-            gutterBottom
-            textAlign="center"
-            sx={{ fontFamily: `'Playfair Display', serif` }}
-          >
-            Articles
-          </Typography>
-
+        <Typography
+          variant="h4"
+          fontWeight="bold"
+          gutterBottom
+          textAlign="center"
+          sx={{
+            fontFamily: `'Playfair Display', serif`,
+            mt: 6,
+            color: "text.primary",
+          }}
+        >
+          Articles
+        </Typography>
+        <Container sx={{ py: 4 }} maxWidth="lg">
           <Grid container spacing={4} justifyContent="center">
             {articles.map((article, index) => (
               <Grid
@@ -88,7 +91,7 @@ export default function ArticlesPage() {
                     backgroundColor: "rgba(255, 255, 255, 0.15)",
                     backdropFilter: "blur(6px)",
                     borderRadius: 4,
-                    boxShadow: "0 8px 32px rgba(0, 0, 0, 0.15)",
+                    boxShadow: "0 0px 8px rgba(0, 0, 0, 0.2)",
                     overflow: "hidden",
                     transition: "transform 0.3s ease, box-shadow 0.3s ease", // ★ 追加
                     "&:hover": {
@@ -131,7 +134,7 @@ export default function ArticlesPage() {
                         variant="h6"
                         fontWeight="bold"
                         gutterBottom
-                        sx={{ wordBreak: "break-word", color: "#333333" }}
+                        sx={{ wordBreak: "break-word", color: "text.primary" }}
                       >
                         {article.title}
                       </Typography>

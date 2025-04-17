@@ -185,58 +185,29 @@ export default function GalleryPage() {
         style={{ position: "relative", minHeight: "100vh", overflow: "hidden" }}
       >
         <ParticleBackground />
-        <Container maxWidth="xl">
-          {imageList.map((filename) => (
-            <img
-              key={filename}
-              src={`${import.meta.env.BASE_URL}galleryimages/${filename}`}
-              onLoad={() => setLoadedCount((prev) => prev + 1)}
-              style={{ display: "none" }}
-              alt=""
-            />
-          ))}
-          <Box sx={{ textAlign: "center", mb: 2 }}>
-            <svg viewBox="0 0 500 100" width="100%" height="100">
-              <defs>
-                <linearGradient
-                  id="glitterGradient"
-                  x1="0%"
-                  y1="0%"
-                  x2="100%"
-                  y2="100%"
-                >
-                  <stop offset="0%" stopColor="#8b7500" />
-                  <stop offset="50%" stopColor="#d49d17" />
-                  <stop offset="100%" stopColor="#8b7500" />
-                </linearGradient>
-              </defs>
-              <text
-                x="50%"
-                y="60%"
-                dominantBaseline="middle"
-                textAnchor="middle"
-                fill="url(#glitterGradient)"
-                fontFamily="'Cinzel', serif"
-                fontSize="48"
-                style={{ letterSpacing: 2, fontWeight: "bold" }}
-              >
-                Gallery
-              </text>
-            </svg>
-
-            <Box
-              sx={{
-                width: "300px",
-                height: "4px",
-                background:
-                  "linear-gradient(to right,rgb(184, 141, 0),rgb(255, 216, 110) )",
-                mx: "auto",
-                borderRadius: "2px",
-                mt: -1.5,
-                mb: 4,
-              }}
-            />
-          </Box>
+        {imageList.map((filename) => (
+          <img
+            key={filename}
+            src={`${import.meta.env.BASE_URL}galleryimages/${filename}`}
+            onLoad={() => setLoadedCount((prev) => prev + 1)}
+            style={{ display: "none" }}
+            alt=""
+          />
+        ))}
+        <Typography
+          variant="h4"
+          fontWeight="bold"
+          gutterBottom
+          textAlign="center"
+          sx={{
+            fontFamily: `'Playfair Display', serif`,
+            mt: 6,
+            color: "text.primary",
+          }}
+        >
+          Gallery
+        </Typography>
+        <Container sx={{ py: 4 }} maxWidth="xl">
           {!allLoaded ? (
             <Box
               sx={{
@@ -294,7 +265,7 @@ export default function GalleryPage() {
                     backdropFilter: "blur(4px)",
                     WebkitBackdropFilter: "blur(4px)",
                     border: "1px solid rgba(255, 255, 255, 0.2)",
-                    boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+                    boxShadow: "0 0px 8px rgba(0, 0, 0, 0.2)",
                     position: "relative",
                     transformStyle: "preserve-3d",
                     animation: "fadeIn 0.8s ease forwards",
@@ -370,7 +341,7 @@ export default function GalleryPage() {
                 backdropFilter: "blur(8px)",
                 WebkitBackdropFilter: "blur(8px)",
                 border: "1px solid rgba(255, 255, 255, 0.2)",
-                boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+                boxShadow: "0 0px 8px rgba(0, 0, 0, 0.2)",
                 padding: "8px 16px",
                 borderRadius: "12px",
                 fontFamily: "Cinzel, serif",

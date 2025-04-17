@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { Box, Button, TextField, Typography, Alert } from "@mui/material";
+import {
+  Box,
+  Button,
+  TextField,
+  Typography,
+  Alert,
+  Container,
+} from "@mui/material";
 import Header from "../components/Header";
 import { Routes } from "react-router-dom";
 import ParticleBackground from "../components/ParticleBackground";
@@ -52,6 +59,7 @@ export default function ContactPage() {
 
   const isFormIncomplete =
     !formData.name || !formData.email || !formData.message;
+
   return (
     <div
       style={{
@@ -67,137 +75,166 @@ export default function ContactPage() {
         sx={{
           flexGrow: 1,
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          alignItems: "flex-start", // 上寄せにする
+          justifyContent: "center", // 横方向に中央寄せ
           position: "relative",
           overflow: "hidden",
         }}
       >
         <ParticleBackground />
 
-        <Box
+        {/* Contactタイトルをカード外に配置 */}
+        <Typography
+          variant="h4"
+          gutterBottom
           sx={{
-            position: "relative",
-            zIndex: 1,
-            backdropFilter: "blur(6px)",
-            backgroundColor: "rgba(255, 255, 255, 0.2)",
-            borderRadius: 4,
-            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.25)",
-            padding: 4,
-            maxWidth: 600,
-            width: "90%",
-            border: "1px solid rgba(255, 255, 255, 0.3)",
-            overflow: "hidden",
+            color: "text.primary", // 色をテーマに基づいて設定
+            fontWeight: "bold",
+            textAlign: "center",
+            fontFamily: `'Playfair Display', serif`,
+            position: "absolute", // 上に配置するための絶対配置
+            top: "5%", // 上から少し余裕を持たせる
+            zIndex: 1, // パーティクル背景の上に配置
+            width: "100%",
           }}
         >
-          <Typography
-            variant="h4"
-            gutterBottom
+          Contact
+        </Typography>
+
+        {/* フォームエリア（グラスモーフィズム効果） */}
+        <Container
+          sx={{
+            py: 1.5,
+            display: "flex",
+            justifyContent: "center", // フォームを中央寄せに
+            zIndex: 1,
+            marginTop: "120px", // Contactとフォームの間に余裕を持たせる
+          }}
+        >
+          <Box
             sx={{
-              color: "#000",
-              fontWeight: "bold",
-              textAlign: "center",
-              fontFamily: `'Playfair Display', serif`,
+              position: "relative",
+              zIndex: 1,
+              backdropFilter: "blur(6px)",
+              backgroundColor: "rgba(255, 255, 255, 0.2)",
+              borderRadius: 4,
+              boxShadow: "0 0px 8px rgba(0, 0, 0, 0.2)",
+              padding: 4,
+              maxWidth: 600,
+              width: "100%", // カードの幅を100%にして中央寄せ
+              border: "1px solid rgba(255, 255, 255, 0.3)",
+              overflow: "hidden",
             }}
           >
-            お問い合わせ
-          </Typography>
-
-          {submitted && (
-            <Alert severity="success" sx={{ mt: 2 }}>
-              送信が完了しました！
-            </Alert>
-          )}
-          {error && (
-            <Alert severity="error" sx={{ mt: 2 }}>
-              送信に失敗しました。再試行してください。
-            </Alert>
-          )}
-
-          <Box component="form" onSubmit={handleSubmit} sx={{ mt: 2 }}>
-            <TextField
-              fullWidth
-              label="名前・会社・団体名"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              margin="normal"
-              variant="outlined"
-              InputProps={{
-                style: {
-                  backgroundColor: "rgba(255, 255, 255, 0.85)",
-                  borderRadius: 12,
-                },
-              }}
-              InputLabelProps={{
-                style: { color: "#333" },
-              }}
-            />
-            <TextField
-              fullWidth
-              label="メールアドレス"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              type="email"
-              required
-              margin="normal"
-              variant="outlined"
-              InputProps={{
-                style: {
-                  backgroundColor: "rgba(255, 255, 255, 0.85)",
-                  borderRadius: 12,
-                },
-              }}
-              InputLabelProps={{
-                style: { color: "#333" },
-              }}
-            />
-            <TextField
-              fullWidth
-              label="お問い合わせ内容"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              multiline
-              rows={5}
-              required
-              margin="normal"
-              variant="outlined"
-              InputProps={{
-                style: {
-                  backgroundColor: "rgba(255, 255, 255, 0.85)",
-                  borderRadius: 12,
-                },
-              }}
-              InputLabelProps={{
-                style: { color: "#333" },
-              }}
-            />
-            <Button
-              type="submit"
-              variant="contained"
-              disabled={isFormIncomplete}
+            <Typography
+              variant="h4"
+              gutterBottom
               sx={{
-                mt: 3,
-                py: 1.5,
-                borderRadius: "999px",
+                color: "text.primary", // 色をテーマに基づいて設定
                 fontWeight: "bold",
-                background: "linear-gradient(to right, #7e57c2, #9575cd)",
-                opacity: isFormIncomplete ? 0.5 : 1,
-                transition: "opacity 0.3s",
-                "&:hover": {
-                  background: "linear-gradient(to right, #673ab7, #7e57c2)",
-                  opacity: isFormIncomplete ? 0.5 : 1, // ホバー時も透明度維持
-                },
+                textAlign: "center",
+                fontFamily: `'Playfair Display', serif`,
               }}
-              fullWidth
             >
-              送信
-            </Button>
+              お問い合わせ
+            </Typography>
+
+            {submitted && (
+              <Alert severity="success" sx={{ mt: 2 }}>
+                送信が完了しました！
+              </Alert>
+            )}
+            {error && (
+              <Alert severity="error" sx={{ mt: 2 }}>
+                送信に失敗しました。再試行してください。
+              </Alert>
+            )}
+
+            <Box component="form" onSubmit={handleSubmit} sx={{ mt: 2 }}>
+              <TextField
+                fullWidth
+                label="名前・会社・団体名"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                margin="normal"
+                variant="outlined"
+                InputProps={{
+                  style: {
+                    backgroundColor: "rgba(255, 255, 255, 0.85)",
+                    borderRadius: 12,
+                  },
+                }}
+                InputLabelProps={{
+                  style: { color: "#333" },
+                }}
+              />
+              <TextField
+                fullWidth
+                label="メールアドレス"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                type="email"
+                required
+                margin="normal"
+                variant="outlined"
+                InputProps={{
+                  style: {
+                    backgroundColor: "rgba(255, 255, 255, 0.85)",
+                    borderRadius: 12,
+                  },
+                }}
+                InputLabelProps={{
+                  style: { color: "#333" },
+                }}
+              />
+              <TextField
+                fullWidth
+                label="お問い合わせ内容"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                multiline
+                rows={5}
+                required
+                margin="normal"
+                variant="outlined"
+                InputProps={{
+                  style: {
+                    backgroundColor: "rgba(255, 255, 255, 0.85)",
+                    borderRadius: 12,
+                  },
+                }}
+                InputLabelProps={{
+                  style: { color: "#333" },
+                }}
+              />
+              <Button
+                type="submit"
+                variant="contained"
+                disabled={isFormIncomplete}
+                sx={{
+                  mt: 3,
+                  py: 1.5,
+                  borderRadius: "999px",
+                  fontWeight: "bold",
+                  background: "linear-gradient(to right, #7e57c2, #9575cd)",
+                  opacity: isFormIncomplete ? 0.5 : 1,
+                  transition: "opacity 0.3s",
+                  "&:hover": {
+                    background: "linear-gradient(to right, #673ab7, #7e57c2)",
+                    opacity: isFormIncomplete ? 0.5 : 1, // ホバー時も透明度維持
+                  },
+                }}
+                fullWidth
+              >
+                送信
+              </Button>
+            </Box>
           </Box>
-        </Box>
+        </Container>
       </Box>
     </div>
   );

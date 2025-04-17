@@ -1,7 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 import GalleryPage from "./pages/GalleryPage";
-import HomePage from "./pages/HelloPage";
+import HomePage from "./pages/HomePage";
 import ContactPage from "./pages/ContactPage";
 import AboutMePage from "./pages/AboutMePage";
 import ProductsPage from "./pages/ProductsPage";
