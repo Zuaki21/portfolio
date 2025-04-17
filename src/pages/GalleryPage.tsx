@@ -219,21 +219,8 @@ export default function GalleryPage() {
                 flexDirection: "column",
                 alignItems: "center",
                 mt: 6,
-              }}
-            >
-              <Box
-                sx={{
-                  width: 64,
-                  height: 64,
-                  border: "6px solid",
-                  borderColor: "transparent",
-                  borderTopColor: "#daa520",
-                  borderRadius: "50%",
-                  animation: "spin 1s linear infinite",
-                  animationFillMode: "forwards",
-                  mb: 2,
-                }}
-              />
+             }}
+            > 
               <Typography
                 variant="h6"
                 sx={{
