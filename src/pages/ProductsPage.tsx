@@ -195,7 +195,18 @@ export default function ProductsPage() {
                     </Box>
                   )}
 
-                  <CardContent sx={{ flexGrow: 1, pb: 2 }}>
+                  <CardContent
+                    sx={{
+                      flexGrow: 1,
+                      pt: 1,
+                      pb: 2,
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center", // これで中央揃えにする
+                      justifyContent: "center", // 縦方向の中央揃え
+                      textAlign: "center", // テキストの中央揃え
+                    }}
+                  >
                     <Typography variant="h6" fontWeight="bold" gutterBottom>
                       {item.title}
                     </Typography>
