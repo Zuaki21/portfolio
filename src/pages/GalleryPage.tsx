@@ -274,6 +274,12 @@ export default function GalleryPage() {
                     animationDelay: `${index * 60}ms`,
                     opacity: 0,
                     ...hoverStyle[index],
+                    // モバイルではアニメーションを無効化
+                    "@media (max-width:600px)": {
+                      animation: "none",
+                      animationDelay: "0ms",
+                      opacity: 1,
+                    },
                     "&::before": {
                       content: '""',
                       position: "absolute",
