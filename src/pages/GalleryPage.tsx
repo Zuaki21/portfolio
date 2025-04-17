@@ -274,7 +274,6 @@ export default function GalleryPage() {
                       boxShadow: "0 0px 8px rgba(0, 0, 0, 0.2)",
                       position: "relative",
                       transformStyle: "preserve-3d",
-                      animation: "fadeIn 0.8s ease forwards",
                       animationFillMode: "forwards",
                       animationDelay: `${index * 60}ms`,
                       opacity: 1,
