@@ -1,5 +1,3 @@
-// src/data/languageicondata.ts
-
 export const languageIconMap: Record<string, string> = {
   JavaScript: "devicon-javascript-plain colored",
   TypeScript: "devicon-typescript-plain colored",
@@ -13,4 +11,8 @@ export const languageIconMap: Record<string, string> = {
   OpenSSL:
     "https://upload.wikimedia.org/wikipedia/commons/6/6a/OpenSSL_logo.svg",
   Selenium: "https://www.svgrepo.com/show/354321/selenium.svg",
+  Java: "devicon-java-plain colored",
+  React: "devicon-react-original colored",
+  MaterialUI: "devicon-materialui-plain colored",
+  Vite: "devicon-vitejs-plain colored",
 };

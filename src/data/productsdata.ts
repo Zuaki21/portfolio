@@ -12,14 +12,33 @@ export interface Product {
 
 export const products: Product[] = [
   {
+    title: "Webサイト「Zuaki’s Portfolio」",
+    date: "2025年4月 (1週間)",
+    languages: ["React", "TypeScript", "MaterialUI", "Vite"],
+    reason: "趣味 (個人制作)",
+    description: "このページです",
+    link: "https://github.com/Zuaki21/portfolio?tab=readme-ov-file",
+    image: "Portfolio.webp",
+  },
+  {
     title: "拡張機能「エモクロアキャラシ画像ダウンローダー」",
     date: "2025年4月 (1日間)",
     languages: ["JavaScript", "HTML", "CSS"],
-    reason: "Chrome拡張機能",
+    reason: "趣味 (個人制作)",
     description:
       "エモクロアキャラシ画像をダウンロードするためのChrome拡張機能。",
     link: "https://chromewebstore.google.com/detail/%E3%82%A8%E3%83%A2%E3%82%AF%E3%83%AD%E3%82%A2%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%B7%E7%94%BB%E5%83%8F%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%80%E3%83%BC/bfppmgmpcbmhmhmabjngnncnaemljkph?authuser=0&hl=ja",
     image: "CharacterSheet.webp",
+  },
+  {
+    title: "布教特化型Vtuberプラットフォーム「FAVE」",
+    date: "2024年9月 (1週間)",
+    languages: ["React", "TypeScript", "MaterialUI", "Vite"],
+    reason: "趣味 (個人制作)",
+    description:
+      "推しを推し合うファンコミュニティSNS\nドコモハッカソン(2024/9/10-2024/9/13) 最優秀賞受賞作品\n主にフロントエンドのUIデザインを担当。",
+    link: "https://github.com/docomo-KOSAMAX/FAVE",
+    image: "FAVE.webp",
   },
   {
     title: "魚眼カメラ補正ソフト『WebcamRealtimeDewarper』",

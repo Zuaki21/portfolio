@@ -30,7 +30,15 @@ const getLinkButton = (url: string) => {
         startIcon={<GitHubIcon />}
         href={url}
         target="_blank"
-        sx={{ borderRadius: 4, textTransform: "none", fontWeight: "bold" }}
+        sx={{
+          borderRadius: 4,
+          textTransform: "none",
+          fontWeight: "bold",
+          width: "auto",
+          [`@media (max-width:600px)`]: {
+            width: "100%",
+          },
+        }}
       >
         リポジトリ
       </Button>
@@ -215,7 +223,7 @@ export default function ProductsPage() {
                     </Box>
                   )}
 
-                  <CardContent sx={{ flexGrow: 1, pb: 6 }}>
+                  <CardContent sx={{ flexGrow: 1, pb: 2 }}>
                     <Typography variant="h6" fontWeight="bold" gutterBottom>
                       {item.title}
                     </Typography>
@@ -231,30 +239,43 @@ export default function ProductsPage() {
 
                   <Box
                     sx={{
-                      position: "absolute",
-                      bottom: 8,
-                      left: 8,
-                      fontSize: "0.75rem",
-                      color: "text.secondary",
-                      px: 1,
-                      py: 0.5,
+                      display: "flex",
+                      flexDirection: "row",
+                      justifyContent: "space-between",
+                      alignItems: "flex-end",
+                      px: 1.5,
+                      pb: 1.5,
+                      flexWrap: "wrap",
+                      gap: 1,
+                      [`@media (max-width:600px)`]: {
+                        flexDirection: "column",
+                        alignItems: "stretch",
+                      },
                     }}
                   >
-                    制作：{item.date} ／ {item.reason}
-                  </Box>
-
-                  {item.link && (
-                    <CardActions
+                    <Typography
+                      variant="body2"
                       sx={{
-                        position: "absolute",
-                        bottom: 0,
-                        right: 4,
-                        m: 0,
+                        fontSize: "0.75rem",
+                        color: "text.secondary",
                       }}
                     >
-                      {getLinkButton(item.link)}
-                    </CardActions>
-                  )}
+                      制作：{item.date} ／ {item.reason}
+                    </Typography>
+
+                    {item.link && (
+                      <Box
+                        sx={{
+                          width: "auto",
+                          [`@media (max-width:600px)`]: {
+                            width: "100%",
+                          },
+                        }}
+                      >
+                        {getLinkButton(item.link)}
+                      </Box>
+                    )}
+                  </Box>
                 </Card>
               </Grid>
             ))}
