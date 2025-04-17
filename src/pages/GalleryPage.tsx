@@ -176,6 +176,8 @@ export default function GalleryPage() {
     }
   }, [loadedCount]);
 
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 600;
+
   return (
     <>
       <Header />
@@ -269,17 +271,15 @@ export default function GalleryPage() {
                     boxShadow: "0 0px 8px rgba(0, 0, 0, 0.2)",
                     position: "relative",
                     transformStyle: "preserve-3d",
-                    animation: "fadeIn 0.8s ease forwards",
-                    animationFillMode: "forwards",
-                    animationDelay: `${index * 60}ms`,
-                    opacity: 0,
+                    ...(isMobile
+                      ? { opacity: 1 }
+                      : {
+                          animation: "fadeIn 0.8s ease forwards",
+                          animationDelay: `${index * 60}ms`,
+                          animationFillMode: "forwards",
+                          opacity: 0,
+                        }),
                     ...hoverStyle[index],
-                    // モバイルではアニメーションを無効化
-                    "@media (max-width:600px)": {
-                      animation: "none",
-                      animationDelay: "0ms",
-                      opacity: 1,
-                    },
                     "&::before": {
                       content: '""',
                       position: "absolute",
@@ -295,7 +295,10 @@ export default function GalleryPage() {
                       pointerEvents: "none",
                       opacity: 0,
                     },
-                    "&:hover::before": { left: "125%", opacity: 1 },
+                    "&:hover::before": {
+                      left: "125%",
+                      opacity: 1,
+                    },
                   }}
                 >
                   <Box
