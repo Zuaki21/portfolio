@@ -106,7 +106,17 @@ export default function Header() {
             aria-label="open drawer"
             edge="end"
             onClick={handleDrawerToggle}
-            sx={{ display: { md: "none" }, color: "#333" }}
+            sx={{
+              display: { md: "none" },
+              color: "#333",
+              outline: "none",
+              "&:focus": {
+                outline: "none",
+              },
+              "&:active": {
+                backgroundColor: "transparent", // ← タップ時の黒背景を防ぐ
+              },
+            }}
           >
             <MenuIcon />
           </IconButton>
@@ -118,13 +128,29 @@ export default function Header() {
                 component={RouterLink}
                 to={item.to}
                 sx={{
+                  position: "relative",
                   color: "#333",
                   fontWeight: "bold",
                   textTransform: "none",
                   fontFamily: "Cinzel, serif",
+                  paddingBottom: "4px",
+                  "&::after": {
+                    content: '""',
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "2px",
+                    backgroundColor: "#b8860b",
+                    transform: "scaleX(0)",
+                    transformOrigin: "center", // ← 中央から伸びるように変更！
+                    transition: "transform 0.2s ease-out",
+                  },
+                  "&:hover::after": {
+                    transform: "scaleX(1)",
+                  },
                   "&:hover": {
                     color: "#b8860b",
-                    borderBottom: "2px solid #b8860b",
                     backgroundColor: "transparent",
                   },
                 }}
