@@ -272,15 +272,23 @@ export default function GalleryPage() {
                       boxShadow: "0 0px 8px rgba(0, 0, 0, 0.2)",
                       position: "relative",
                       transformStyle: "preserve-3d",
-                      ...(isMobile
-                        ? { opacity: 1 }
-                        : {
-                            animation: "fadeIn 0.8s ease forwards",
-                            animationDelay: `${index * 60}ms`,
-                            animationFillMode: "forwards",
-                            opacity: 0,
-                          }),
+                      // アニメーションをスマホとPCで統一
+                      animation: "fadeIn 0.8s ease forwards",
+                      animationFillMode: "forwards",
+                      animationDelay: `${index * 60}ms`,
+                      opacity: 0,
                       ...hoverStyle[index],
+                      // モバイルでのアニメーションを有効にする
+                      "@media (max-width:600px)": {
+                        animation: "fadeIn 0.8s ease forwards",
+                        animationDelay: `${index * 60}ms`,
+                        opacity: 1, // モバイルでは即表示
+                      },
+                      // PCでもアニメーションが効くように調整
+                      "@media (min-width:601px)": {
+                        animation: "fadeIn 0.8s ease forwards",
+                        opacity: 1,
+                      },
                       "&::before": {
                         content: '""',
                         position: "absolute",
@@ -355,7 +363,7 @@ export default function GalleryPage() {
                 WebkitBackdropFilter: "blur(8px)",
                 border: "1px solid rgba(255, 255, 255, 0.2)",
                 boxShadow: "0 0px 8px rgba(0, 0, 0, 0.2)",
-                padding: "8px 16px",
+                padding: "8px 4px",
                 borderRadius: "12px",
                 fontFamily: "Cinzel, serif",
                 fontWeight: "bold",

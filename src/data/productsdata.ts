@@ -16,7 +16,7 @@ export const products: Product[] = [
     date: "2025年4月 (1週間)",
     languages: ["React", "TypeScript", "MaterialUI", "Vite"],
     reason: "趣味 (個人制作)",
-    description: "このサイトです。インタラクティブデザイン対応。",
+    description: "このサイトです。レスポンシブデザイン対応。",
     link: "https://github.com/Zuaki21/portfolio?tab=readme-ov-file",
     image: "Portfolio2.webp",
   },
