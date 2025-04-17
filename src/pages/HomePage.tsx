@@ -75,7 +75,9 @@ export default function HomePage() {
       new THREE.Float32BufferAttribute(positions, 3)
     );
 
-    const starTexture = new THREE.TextureLoader().load("/image/star.png");
+    const starTexture = new THREE.TextureLoader().load(
+      `${import.meta.env.BASE_URL}image/star.png`
+    );
 
     const starsMaterial = new THREE.PointsMaterial({
       color: 0xffffff,
