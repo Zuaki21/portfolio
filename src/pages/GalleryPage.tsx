@@ -246,98 +246,100 @@ export default function GalleryPage() {
               </Typography>
             </Box>
           ) : (
-            <Masonry
-              columns={{ xs: 2, sm: 3, md: 4, lg: 5, xl: 6 }}
-              spacing={2}
-            >
-              {imageList.map((filename, index) => (
-                <Box
-                  key={filename}
-                  onClick={() => {
-                    setSelectedIndex(index);
-                    setZoomScale(1);
-                    setOffset({ x: 0, y: 0 });
-                  }}
-                  onMouseMove={(e) => handleMouseHover(e, index)}
-                  onMouseLeave={() => handleMouseLeave(index)}
-                  sx={{
-                    cursor: "pointer",
-                    borderRadius: 2,
-                    overflow: "hidden",
-                    backgroundColor: "rgba(255, 255, 255, 0.1)",
-                    backdropFilter: "blur(4px)",
-                    WebkitBackdropFilter: "blur(4px)",
-                    border: "1px solid rgba(255, 255, 255, 0.2)",
-                    boxShadow: "0 0px 8px rgba(0, 0, 0, 0.2)",
-                    position: "relative",
-                    transformStyle: "preserve-3d",
-                    ...(isMobile
-                      ? { opacity: 1 }
-                      : {
-                          animation: "fadeIn 0.8s ease forwards",
-                          animationDelay: `${index * 60}ms`,
-                          animationFillMode: "forwards",
-                          opacity: 0,
-                        }),
-                    ...hoverStyle[index],
-                    "&::before": {
-                      content: '""',
-                      position: "absolute",
-                      top: 0,
-                      left: "-75%",
-                      width: "50%",
-                      height: "100%",
-                      background:
-                        "linear-gradient(120deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.0) 100%)",
-                      transform: "skewX(-20deg)",
-                      transition: "left 0.5s ease-in-out, opacity 0.2s",
-                      zIndex: 2,
-                      pointerEvents: "none",
-                      opacity: 0,
-                    },
-                    "&:hover::before": {
-                      left: "125%",
-                      opacity: 1,
-                    },
-                  }}
-                >
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+              <Masonry
+                columns={{ xs: 2, sm: 3, md: 4, lg: 5, xl: 6 }}
+                spacing={2}
+              >
+                {imageList.map((filename, index) => (
                   <Box
+                    key={filename}
+                    onClick={() => {
+                      setSelectedIndex(index);
+                      setZoomScale(1);
+                      setOffset({ x: 0, y: 0 });
+                    }}
+                    onMouseMove={(e) => handleMouseHover(e, index)}
+                    onMouseLeave={() => handleMouseLeave(index)}
                     sx={{
-                      position: "relative",
-                      width: "100%",
-                      height: "auto",
+                      cursor: "pointer",
                       borderRadius: 2,
                       overflow: "hidden",
+                      backgroundColor: "rgba(255, 255, 255, 0.1)",
+                      backdropFilter: "blur(4px)",
+                      WebkitBackdropFilter: "blur(4px)",
+                      border: "1px solid rgba(255, 255, 255, 0.2)",
+                      boxShadow: "0 0px 8px rgba(0, 0, 0, 0.2)",
+                      position: "relative",
+                      transformStyle: "preserve-3d",
+                      ...(isMobile
+                        ? { opacity: 1 }
+                        : {
+                            animation: "fadeIn 0.8s ease forwards",
+                            animationDelay: `${index * 60}ms`,
+                            animationFillMode: "forwards",
+                            opacity: 0,
+                          }),
+                      ...hoverStyle[index],
+                      "&::before": {
+                        content: '""',
+                        position: "absolute",
+                        top: 0,
+                        left: "-75%",
+                        width: "50%",
+                        height: "100%",
+                        background:
+                          "linear-gradient(120deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.0) 100%)",
+                        transform: "skewX(-20deg)",
+                        transition: "left 0.5s ease-in-out, opacity 0.2s",
+                        zIndex: 2,
+                        pointerEvents: "none",
+                        opacity: 0,
+                      },
+                      "&:hover::before": {
+                        left: "125%",
+                        opacity: 1,
+                      },
                     }}
                   >
                     <Box
-                      component="img"
-                      src={`${
-                        import.meta.env.BASE_URL
-                      }galleryimages/${filename}`}
-                      alt={filename}
                       sx={{
+                        position: "relative",
                         width: "100%",
                         height: "auto",
-                        display: "block",
-                        userSelect: "none",
-                        pointerEvents: "none",
+                        borderRadius: 2,
+                        overflow: "hidden",
                       }}
-                    />
-                    <Box
-                      sx={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: "100%",
-                        height: "100%",
-                        zIndex: 10,
-                      }}
-                    />
+                    >
+                      <Box
+                        component="img"
+                        src={`${
+                          import.meta.env.BASE_URL
+                        }galleryimages/${filename}`}
+                        alt={filename}
+                        sx={{
+                          width: "100%",
+                          height: "auto",
+                          display: "block",
+                          userSelect: "none",
+                          pointerEvents: "none",
+                        }}
+                      />
+                      <Box
+                        sx={{
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          width: "100%",
+                          height: "100%",
+                          zIndex: 10,
+                        }}
+                      />
+                    </Box>
                   </Box>
-                </Box>
-              ))}
-            </Masonry>
+                ))}
+              </Masonry>
+            </Box>
           )}
           {allLoaded && (
             <Typography
