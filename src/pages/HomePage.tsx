@@ -236,7 +236,7 @@ export default function HomePage() {
           fontSize: "clamp(3rem, 20vw, 8rem)", // 画面幅に応じたサイズに変更
           fontWeight: "bold",
           pointerEvents: "none", // 文字部分のドラッグ判定を無視
-          textShadow: "0px 0px 5px rgba(0, 0, 0, 0.4)", // 影を追加
+          textShadow: "0px 0px 4px rgba(0, 0, 0, 0.4)", // 影を追加
         }}
       >
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -246,7 +246,7 @@ export default function HomePage() {
               paddingTop: "10px",
               fontFamily: "Roboto Slab, serif",
               fontSize: "1em", // サイズを調整
-              textShadow: "0px 0px 5px rgba(0, 0, 0, 0.5)", // 影を追加
+              textShadow: "0px 0px 4px rgba(0, 0, 0, 0.5)", // 影を追加
               position: "relative",
             }}
           >
@@ -258,7 +258,7 @@ export default function HomePage() {
                 left: "0",
                 right: "0",
                 borderTop: "2px solid white",
-                boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.)", // 上部線に影
+                boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.3)", // 上部線に影
               }}
             />
           </h1>
@@ -270,7 +270,7 @@ export default function HomePage() {
                 "typing 3s steps(30) 1s forwards, blink 0.75s step-end infinite",
               paddingBottom: "0px",
               fontFamily: "Roboto Slab, serif",
-              textShadow: "0px 0px 5px rgba(0, 0, 0, 0.5)", // 影を追加
+              textShadow: "0px 0px 4px rgba(0, 0, 0, 0.5)", // 影を追加
             }}
           >
             Welcome to my portfolio!
@@ -281,7 +281,7 @@ export default function HomePage() {
                 left: "0",
                 right: "0",
                 borderBottom: "2px solid white",
-                boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.3)", // 下部線に影
+                boxShadow: "0px 0px 4px rgba(0, 0, 0, 0.3)", // 下部線に影
               }}
             />
           </p>
