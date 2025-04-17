@@ -51,7 +51,15 @@ const getLinkButton = (url: string) => {
         startIcon={<PlayArrowIcon />}
         href={url}
         target="_blank"
-        sx={{ borderRadius: 4, textTransform: "none", fontWeight: "bold" }}
+        sx={{
+          borderRadius: 4,
+          textTransform: "none",
+          fontWeight: "bold",
+          width: "auto",
+          [`@media (max-width:600px)`]: {
+            width: "100%",
+          },
+        }}
       >
         プレイ
       </Button>
@@ -65,7 +73,15 @@ const getLinkButton = (url: string) => {
         startIcon={<StoreIcon />}
         href={url}
         target="_blank"
-        sx={{ borderRadius: 4, textTransform: "none", fontWeight: "bold" }}
+        sx={{
+          borderRadius: 4,
+          textTransform: "none",
+          fontWeight: "bold",
+          width: "auto",
+          [`@media (max-width:600px)`]: {
+            width: "100%",
+          },
+        }}
       >
         ストアページ
       </Button>
@@ -78,7 +94,15 @@ const getLinkButton = (url: string) => {
       startIcon={<OpenInNewIcon />}
       href={url}
       target="_blank"
-      sx={{ borderRadius: 4, textTransform: "none", fontWeight: "bold" }}
+      sx={{
+        borderRadius: 4,
+        textTransform: "none",
+        fontWeight: "bold",
+        width: "auto",
+        [`@media (max-width:600px)`]: {
+          width: "100%",
+        },
+      }}
     >
       詳細を見る
     </Button>
@@ -241,6 +265,9 @@ export default function ProductsPage() {
                       sx={{
                         fontSize: "0.75rem",
                         color: "text.secondary",
+                        [`@media (max-width:600px)`]: {
+                          textAlign: "center",
+                        },
                       }}
                     >
                       制作：{item.date} ／ {item.reason}

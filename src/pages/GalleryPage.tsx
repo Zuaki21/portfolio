@@ -226,6 +226,7 @@ export default function GalleryPage() {
                   borderTopColor: "#daa520",
                   borderRadius: "50%",
                   animation: "spin 1s linear infinite",
+                  animationFillMode: "forwards",
                   mb: 2,
                 }}
               />
@@ -269,6 +270,7 @@ export default function GalleryPage() {
                     position: "relative",
                     transformStyle: "preserve-3d",
                     animation: "fadeIn 0.8s ease forwards",
+                    animationFillMode: "forwards",
                     animationDelay: `${index * 60}ms`,
                     opacity: 0,
                     ...hoverStyle[index],
