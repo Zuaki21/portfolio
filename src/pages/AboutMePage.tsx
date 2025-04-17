@@ -14,6 +14,7 @@ import { Routes } from "react-router-dom";
 import ParticleBackground from "../components/ParticleBackground";
 import { useEffect, useState } from "react";
 import { GitHub } from "@mui/icons-material";
+import LaunchIcon from "@mui/icons-material/Launch";
 
 export default function AboutMePage() {
   return (
@@ -112,8 +113,16 @@ export default function AboutMePage() {
               href="https://www.iec.hiroshima-u.ac.jp/"
               target="_blank"
               rel="noopener"
+              underline="always" // 下線を常に表示
+              sx={{
+                color: "inherit", // 青くしない
+                display: "inline-flex",
+                alignItems: "center",
+                textDecorationColor: "inherit", // 下線の色も親と同じに
+              }}
             >
               計算機基礎学研究室
+              <LaunchIcon sx={{ fontSize: 16, ml: 0.5 }} />
             </Link>
           </Typography>
 
@@ -123,8 +132,20 @@ export default function AboutMePage() {
             sx={{ color: "text.primary" }}
           >
             所属：{" "}
-            <Link href="https://hu-gsd.com/" target="_blank" rel="noopener">
+            <Link
+              href="https://hu-gsd.com/"
+              target="_blank"
+              rel="noopener"
+              underline="always"
+              sx={{
+                color: "inherit",
+                display: "inline-flex",
+                alignItems: "center",
+                textDecorationColor: "inherit",
+              }}
+            >
               広島大学ゲーム制作同好会
+              <LaunchIcon sx={{ fontSize: 16, ml: 0.5 }} />
             </Link>
           </Typography>
 
@@ -151,13 +172,11 @@ export default function AboutMePage() {
             gutterBottom
             sx={{ color: "text.primary", textAlign: "center" }}
           >
-            趣味：お絵描き・VRChat（最近熱い）・TRPG・ゲーム・アニメ
+            趣味：お絵描き・VRChat・TRPG・ゲーム・アニメ
             <br />
-            創作が好きで、さまざまな作品を制作しています。
+            創作が好きで幅広く制作しています。
             <br />
             MetaQuest2を購入し、VR方面に興味あり。
-            <br />
-            表現の幅を広げるため、新しいことにも積極的に挑戦しています。
           </Typography>
 
           <Divider sx={{ my: 4 }} />
@@ -173,11 +192,12 @@ export default function AboutMePage() {
             gutterBottom
             sx={{ color: "text.primary", textAlign: "center" }}
           >
-            セキュリティ分野における研究（リング署名・秘匿共通集合・近距離通信）
+            研究：セキュリティ分野（リング署名・秘匿共通集合・近距離通信）
             <br />
             資格：ITパスポート／基本情報技術者／応用情報技術者
             <br />
-            実績：NTTドコモハッカソン最優秀賞、ICCT Pacific 2025にて学会発表
+            実績：NTTドコモハッカソン(2024/9/10-2024/9/13)最優秀賞、ICCT Pacific
+            2025にて学会発表
           </Typography>
 
           <Divider sx={{ my: 4 }} />

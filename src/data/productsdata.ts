@@ -34,9 +34,9 @@ export const products: Product[] = [
     title: "布教特化型Vtuberプラットフォーム「FAVE」",
     date: "2024年9月 (1週間)",
     languages: ["React", "TypeScript", "MaterialUI", "Vite"],
-    reason: "趣味 (個人制作)",
+    reason: "インターン (チーム制作)",
     description:
-      "推しを推し合うファンコミュニティSNS。\nドコモハッカソン(2024/9/10-2024/9/13) 最優秀賞受賞作品。\n主にフロントエンドのUIデザインを担当。",
+      "推しを推し合うファンコミュニティSNS。 ドコモハッカソン(2024/9/10-2024/9/13) 最優秀賞受賞作品。\n主にフロントエンドのUIデザインを担当。",
     link: "https://github.com/docomo-KOSAMAX/FAVE",
     image: "FAVE.webp",
   },
@@ -56,14 +56,14 @@ export const products: Product[] = [
     languages: ["C#", "Unity"],
     reason: "研究 (個人制作)",
     description:
-      "匿名性を保った事前登録者の認証アプリ。\n端末間通信と独自ライブラリECDL_DLLを使用。",
+      "匿名性を保った事前登録者の認証アプリ。端末間通信と独自ライブラリECDL_DLLを使用。",
     image: "laboapp.webp",
   },
   {
     title: "暗号ライブラリ『ECDL_DLL』",
     date: "2023年11月 ～ 12月 (2か月間)",
     languages: ["C", "C++", "OpenSSL"],
-    reason: "研究",
+    reason: "研究 (個人制作)",
     description:
       "リング署名のための高速楕円曲線暗号ライブラリ。楕円点操作を実装。",
     link: "https://github.com/Zuaki21/ECDL_DLL",
@@ -75,14 +75,14 @@ export const products: Product[] = [
     languages: ["C#", "Unity"],
     reason: "サークル (チーム制作)",
     description:
-      "クロスする2つのレーンのリズムゲーム。UI、エディタ、\nデータ暗号化、オンラインランキング（NCMB）を担当。",
+      "クロスする2つのレーンのリズムゲーム。UI、エディタ、データ暗号化、オンラインランキング（NCMB）を担当。",
     image: "chiasma.webp",
   },
   {
     title: "不良品検知システム",
     date: "2023年9月 (2週間間)",
     languages: ["Python"],
-    reason: "インターン",
+    reason: "インターン (チーム制作)",
     description:
       "マツダさんでのインターンで実装。f-anoGanを用いた画像不良品判定システム。前処理とモデル調整を担当。",
     image: "Default.webp",
@@ -103,7 +103,7 @@ export const products: Product[] = [
     languages: ["C#", "Unity"],
     reason: "サークル (個人制作)",
     description:
-      "操作していない間は時間が遅くなる見下ろし型シューティング。 \n インタラクティブミュージック対応。全6ステージ。",
+      "操作していない間は時間が遅くなる見下ろし型シューティング。 インタラクティブミュージック対応。全6ステージ。",
     image: "slowwars.webp",
   },
   {
